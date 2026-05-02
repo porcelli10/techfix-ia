@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TechFix IA — Automatize seu atendimento, responda clientes 24/7 e recupere vendas perdidas com Inteligência Artificial especializada em assistências técnicas.">
+<title>TechFix IA — Assistência Técnica que Nunca Para de Vender</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-void:#070512;
+  --bg-deep:#0C0820;
+  --bg-mid:#111028;
+  --bg-card:rgba(255,255,255,0.035);
+  --bg-card-hover:rgba(255,255,255,0.06);
+  --purple:#7633E8;
+  --purple-bright:#9B60F5;
+  --purple-glow:rgba(118,51,232,0.35);
+  --purple-border:rgba(118,51,232,0.28);
+  --teal:#00D4AA;
+  --teal-soft:rgba(0,212,170,0.1);
+  --text-white:#F0ECFF;
+  --text-silver:#B8AECF;
+  --text-dim:#7A708F;
+  --border:rgba(255,255,255,0.07);
+  --border-purple:rgba(118,51,232,0.3);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg-void);color:var(--text-white);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.1}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* noise */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.018}
+
+/* utils */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:100px 24px}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);background:rgba(0,212,170,0.08);border:1px solid rgba(0,212,170,0.2);padding:6px 14px;border-radius:100px;margin-bottom:20px}
+.section-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal);animation:pulse 2s infinite}
+.section-header{text-align:center;margin-bottom:64px}
+.section-title{font-size:clamp(28px,4vw,46px);font-weight:700;color:var(--text-white);margin-bottom:16px;letter-spacing:-.02em}
+.section-title em{font-style:normal;color:var(--purple-bright)}
+.section-sub{font-size:17px;color:var(--text-silver);max-width:560px;margin:0 auto;line-height:1.65}
+
+/* animations */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes typing{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+@keyframes wa-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;font-family:'Space Grotesk',sans-serif;cursor:pointer;transition:all .2s ease;border:none;white-space:nowrap}
+.btn-primary{background:linear-gradient(135deg,#7633E8,#9B60F5);color:#fff;box-shadow:0 4px 24px rgba(118,51,232,.4),0 1px 0 rgba(255,255,255,.15) inset}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(118,51,232,.55)}
+.btn-wa{background:linear-gradient(135deg,#25D366,#1DA851);color:#fff;box-shadow:0 4px 24px rgba(37,211,102,.35)}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,211,102,.5)}
+.btn-outline{background:transparent;color:var(--text-white);border:1px solid var(--border)}
+.btn-outline:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.15);transform:translateY(-1px)}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:all .3s ease}
+.nav.scrolled{background:rgba(7,5,18,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;height:70px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--text-white)}
+.nav-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#7633E8,#9B60F5);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.nav-logo span{color:var(--purple-bright)}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text-silver);padding:6px 12px;border-radius:6px;transition:all .2s}
+.nav-links a:hover{color:var(--text-white);background:rgba(255,255,255,.06)}
+.nav-cta{background:linear-gradient(135deg,#7633E8,#9B60F5) !important;color:#fff !important;padding:8px 18px !important;border-radius:8px !important;font-size:13px !important;box-shadow:0 2px 12px rgba(118,51,232,.4)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(118,51,232,.5) !important}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--text-white);border-radius:2px;transition:all .3s}
+.nav-mobile{display:none;position:absolute;top:70px;left:0;right:0;background:rgba(7,5,18,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 24px 24px}
+.nav-mobile ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.nav-mobile a{display:block;padding:10px 16px;font-size:15px;color:var(--text-silver);border-radius:8px;transition:all .2s}
+.nav-mobile a:hover{color:var(--text-white);background:rgba(255,255,255,.06)}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:100px 24px 60px}
+.hero-bg{position:absolute;inset:0;background-image:url('https://fixia.destaqueseagora.com.br/images/hero-bg-tech.jpg');background-size:cover;background-position:center top;opacity:.1}
+.hero-gradient{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 0% 50%,rgba(118,51,232,.25) 0%,transparent 60%),radial-gradient(ellipse 50% 80% at 100% 20%,rgba(0,212,170,.07) 0%,transparent 50%),linear-gradient(180deg,var(--bg-void) 0%,transparent 30%,transparent 70%,var(--bg-void) 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(118,51,232,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(118,51,232,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
+.hero-inner{position:relative;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hero-badge{margin-bottom:24px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-bright);background:rgba(155,96,245,.1);border:1px solid rgba(155,96,245,.25);padding:5px 12px;border-radius:100px}
+.hero-title{font-size:clamp(38px,5vw,62px);font-weight:800;color:var(--text-white);margin-bottom:24px;letter-spacing:-.02em;line-height:1.05}
+.hero-title em{font-style:normal;background:linear-gradient(135deg,#9B60F5,#00D4AA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:18px;color:var(--text-silver);line-height:1.65;margin-bottom:36px;max-width:520px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+.hero-stats{display:flex;gap:32px;padding-top:32px;border-top:1px solid var(--border)}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--text-white);line-height:1;margin-bottom:4px}
+.stat-num span{color:var(--purple-bright)}
+.stat-lbl{font-size:13px;color:var(--text-dim)}
+
+/* chat widget */
+.hero-chat{animation:float 6s ease-in-out infinite}
+.chat-wrap{background:var(--bg-mid);border:1px solid var(--border-purple);border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.04),0 40px 80px rgba(0,0,0,.6),0 0 60px var(--purple-glow)}
+.chat-head{background:linear-gradient(135deg,rgba(118,51,232,.3),rgba(0,212,170,.15));padding:16px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border)}
+.chat-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#7633E8,#00D4AA);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.chat-name{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600}
+.chat-online{display:flex;align-items:center;gap:6px;font-size:12px;color:#00D4AA}
+.chat-dot{width:7px;height:7px;border-radius:50%;background:#00D4AA;box-shadow:0 0 6px #00D4AA;animation:pulse 2s infinite}
+.chat-body{padding:20px;display:flex;flex-direction:column;gap:12px;min-height:260px}
+.msg{display:flex;max-width:85%}
+.msg-bot{align-self:flex-start}
+.msg-user{align-self:flex-end}
+.bubble{padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.5}
+.msg-bot .bubble{background:rgba(118,51,232,.2);border:1px solid rgba(118,51,232,.3);border-bottom-left-radius:4px}
+.msg-user .bubble{background:rgba(0,212,170,.15);border:1px solid rgba(0,212,170,.25);border-bottom-right-radius:4px}
+.msg-time{font-size:10px;color:var(--text-dim);margin-top:4px;text-align:right}
+.typing{display:flex;gap:4px;padding:12px 16px;background:rgba(118,51,232,.2);border:1px solid rgba(118,51,232,.3);border-radius:14px;border-bottom-left-radius:4px;align-self:flex-start;width:fit-content}
+.typing span{width:6px;height:6px;border-radius:50%;background:var(--purple-bright)}
+.typing span:nth-child(1){animation:typing 1.2s infinite 0s}
+.typing span:nth-child(2){animation:typing 1.2s infinite .2s}
+.typing span:nth-child(3){animation:typing 1.2s infinite .4s}
+.chat-footer{display:flex;gap:8px;padding:14px 20px;border-top:1px solid var(--border);background:rgba(0,0,0,.2)}
+.chat-inp{flex:1;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:8px;padding:9px 14px;font-size:13px;color:var(--text-dim);font-family:'Inter',sans-serif}
+.chat-send{width:36px;height:36px;border-radius:8px;background:var(--purple);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.pills{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.pill{display:flex;align-items:center;gap:6px;padding:5px 12px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:100px;font-size:12px;font-weight:500;color:var(--text-silver)}
+.pill svg{color:var(--teal);flex-shrink:0}
+
+/* ── PROBLEMS ── */
+#problemas{background:linear-gradient(180deg,var(--bg-void) 0%,var(--bg-deep) 50%,var(--bg-void) 100%)}
+.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.prob-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden;transition:all .3s ease}
+.prob-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E83333,#E87833)}
+.prob-card:hover{background:var(--bg-card-hover);border-color:rgba(232,51,51,.25);transform:translateY(-4px)}
+.prob-icon{width:52px;height:52px;border-radius:12px;background:rgba(232,51,51,.1);border:1px solid rgba(232,51,51,.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:24px}
+.prob-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px}
+.prob-desc{font-size:15px;color:var(--text-silver);line-height:1.65}
+.prob-stat{margin-top:20px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:#E87833;font-weight:500}
+
+/* ── SOLUTION ── */
+#solucao{background:var(--bg-void)}
+.sol-layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.sol-features{display:flex;flex-direction:column;gap:16px;margin-top:40px}
+.sol-feat{display:flex;gap:16px;padding:20px 24px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;transition:all .25s ease}
+.sol-feat:hover{background:var(--bg-card-hover);border-color:var(--border-purple)}
+.feat-ico{width:44px;height:44px;border-radius:10px;background:rgba(118,51,232,.15);border:1px solid rgba(118,51,232,.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.feat-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;margin-bottom:6px}
+.feat-desc{font-size:14px;color:var(--text-silver);line-height:1.6}
+.sol-right{position:sticky;top:100px}
+.sol-img{border-radius:20px;overflow:hidden;border:1px solid var(--border-purple);box-shadow:0 0 60px var(--purple-glow);position:relative}
+.sol-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.sol-img-ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,var(--bg-void) 100%)}
+.dua-box{margin-top:20px;padding:20px;background:rgba(0,212,170,.05);border:1px solid rgba(0,212,170,.2);border-radius:14px}
+.dua-title{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--teal);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.dua-desc{font-size:13px;color:var(--text-silver);line-height:1.55}
+
+/* ── ABOUT ── */
+#sobre{background:linear-gradient(180deg,var(--bg-void) 0%,var(--bg-deep) 50%,var(--bg-void) 100%)}
+.about-layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-imgs{position:relative}
+.about-main{border-radius:20px;overflow:hidden;border:1px solid var(--border-purple);aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:0 0 60px var(--purple-glow)}
+.about-badge{position:absolute;bottom:-16px;right:-16px;width:130px;height:130px;border-radius:14px;overflow:hidden;border:3px solid var(--bg-void);box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.about-badge img{width:100%;height:100%;object-fit:cover}
+.about-title{font-size:clamp(28px,3.5vw,42px);font-weight:700;margin-bottom:8px;letter-spacing:-.02em}
+.about-title em{font-style:normal;color:var(--purple-bright)}
+.about-sub{font-size:16px;color:var(--teal);font-weight:500;margin-bottom:24px}
+.about-text{font-size:16px;color:var(--text-silver);line-height:1.7;margin-bottom:16px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.a-stat{padding:20px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-align:center}
+.a-stat-num{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--purple-bright);line-height:1;margin-bottom:6px}
+.a-stat-lbl{font-size:13px;color:var(--text-dim)}
+
+/* ── TESTIMONIALS ── */
+#resultados{background:var(--bg-void)}
+.videos-grid{max-width:1200px;margin:0 auto 64px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.vid-card{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;border:1px solid var(--border);transition:all .25s ease;background:var(--bg-mid)}
+.vid-card:hover{transform:scale(1.04);border-color:var(--border-purple);box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.vid-card img{width:100%;height:100%;object-fit:cover}
+.vid-ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.75) 100%);display:flex;align-items:center;justify-content:center}
+.play-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.vid-card:hover .play-btn{transform:scale(1.12);background:#fff}
+.play-btn svg{color:#000;margin-left:2px}
+.vid-lbl{position:absolute;bottom:8px;left:10px;right:10px;font-size:11px;color:rgba(255,255,255,.75);font-weight:500}
+.reviews-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rev-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:22px;transition:all .25s ease}
+.rev-card:hover{background:var(--bg-card-hover);border-color:var(--border-purple);transform:translateY(-4px)}
+.rev-stars{color:#F5C518;font-size:14px;margin-bottom:12px;letter-spacing:1px}
+.rev-text{font-size:14px;color:var(--text-silver);line-height:1.65;margin-bottom:18px}
+.rev-author{display:flex;align-items:center;gap:10px}
+.rev-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;color:#fff;flex-shrink:0}
+.rev-name{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600}
+.rev-role{font-size:12px;color:var(--text-dim)}
+
+/* ── CTA FINAL ── */
+#diagnostico{padding:100px 24px;position:relative;overflow:hidden;text-align:center}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(118,51,232,.18),transparent 70%),linear-gradient(180deg,var(--bg-void) 0%,var(--bg-deep) 50%,var(--bg-void) 100%)}
+.cta-inner{position:relative;max-width:680px;margin:0 auto}
+.cta-title{font-size:clamp(30px,4.5vw,52px);font-weight:700;margin-bottom:20px;letter-spacing:-.02em}
+.cta-title em{font-style:normal;color:var(--purple-bright)}
+.cta-sub{font-size:17px;color:var(--text-silver);line-height:1.65;margin-bottom:40px}
+.cta-note{margin-top:14px;font-size:13px;color:var(--text-dim)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg-deep);border-top:1px solid var(--border);padding:60px 24px 32px}
+.foot-inner{max-width:1200px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.foot-logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;margin-bottom:16px}
+.foot-logo-ico{width:36px;height:36px;background:linear-gradient(135deg,#7633E8,#9B60F5);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.foot-tag{font-size:14px;color:var(--text-dim);line-height:1.6;max-width:280px;margin-bottom:24px}
+.foot-social{display:flex;gap:10px}
+.soc-btn{width:38px;height:38px;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-dim);transition:all .2s}
+.soc-btn:hover{background:rgba(118,51,232,.15);border-color:var(--border-purple);color:var(--purple-bright)}
+.foot-col-title{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;color:var(--text-white);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-links a{font-size:14px;color:var(--text-dim);transition:color .2s}
+.foot-links a:hover{color:var(--text-silver)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot-copy{font-size:13px;color:var(--text-dim)}
+.foot-pw{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dim)}
+.foot-pw img{height:22px;opacity:.65;filter:brightness(10)}
+
+/* ── MODAL ── */
+.modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.9);backdrop-filter:blur(12px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:all .3s ease}
+.modal-ov.open{opacity:1;visibility:visible}
+.modal-box{position:relative;width:100%;max-width:900px;aspect-ratio:16/9;border-radius:16px;overflow:hidden;transform:scale(.9);transition:transform .3s ease}
+.modal-ov.open .modal-box{transform:scale(1)}
+.modal-box iframe{width:100%;height:100%;border:none}
+.modal-close{position:absolute;top:-14px;right:-14px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:16px;backdrop-filter:blur(8px);transition:all .2s;z-index:10}
+.modal-close:hover{background:rgba(255,255,255,.25)}
+
+/* ── WA FLOAT ── */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:all .25s ease;animation:wa-bounce 3s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.1);animation:none;box-shadow:0 8px 28px rgba(37,211,102,.65)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-chat{max-width:480px;margin:0 auto}
+  .sol-layout{grid-template-columns:1fr}
+  .sol-right{position:static}
+  .about-layout{grid-template-columns:1fr;gap:48px}
+  .about-imgs{max-width:440px;margin:0 auto}
+  .foot-top{grid-template-columns:1fr 1fr;gap:32px}
+  .videos-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:repeat(2,1fr)}
+  .problems-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .section{padding:72px 20px}
+  .hero{padding:80px 20px 56px}
+  .nav-links,.nav-cta{display:none}
+  .nav-burger{display:flex}
+  .hero-stats{gap:16px}
+  .stat-num{font-size:22px}
+  .foot-top{grid-template-columns:1fr;gap:24px}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  .videos-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .about-imgs{max-width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#inicio" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      </div>
+      TechFix<span>IA</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#problemas">Problemas</a></li>
+      <li><a href="#solucao">Solução</a></li>
+      <li><a href="#sobre">Especialista</a></li>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#diagnostico" class="nav-cta">Diagnóstico Gratuito</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mob">
+    <ul>
+      <li><a href="#problemas" onclick="toggleMenu()">Problemas</a></li>
+      <li><a href="#solucao" onclick="toggleMenu()">Solução</a></li>
+      <li><a href="#sobre" onclick="toggleMenu()">Especialista</a></li>
+      <li><a href="#resultados" onclick="toggleMenu()">Resultados</a></li>
+      <li><a href="#diagnostico" onclick="toggleMenu()" style="color:var(--purple-bright);font-weight:600">Diagnóstico Gratuito →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-content reveal">
+      <div class="hero-badge">
+        <span class="badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          IA para Assistências Técnicas
+        </span>
+      </div>
+      <h1 class="hero-title">Sua Assistência Técnica<br><em>Perdendo Vendas?</em></h1>
+      <p class="hero-sub">Nossa IA atende clientes 24/7, faz triagem automática e segue cada lead até o fechamento — enquanto você foca no que sabe fazer de melhor.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5511922042138?text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20agilizar%20meu%20atendimento!" target="_blank" class="btn btn-wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar Diagnóstico Gratuito
+        </a>
+        <a href="#problemas" class="btn btn-outline">
+          Ver como funciona
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9l-7 7-7-7"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">100<span>+</span></div>
+          <div class="stat-lbl">Empresas aceleradas</div>
+        </div>
+        <div>
+          <div class="stat-num">24<span>/7</span></div>
+          <div class="stat-lbl">Atendimento ativo</div>
+        </div>
+        <div>
+          <div class="stat-num">3<span>x</span></div>
+          <div class="stat-lbl">Mais conversões</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-chat reveal reveal-d2">
+      <div class="chat-wrap">
+        <div class="chat-head">
+          <div class="chat-av">🤖</div>
+          <div>
+            <div class="chat-name">Assistente TechFix IA</div>
+            <div class="chat-online"><div class="chat-dot"></div>Online agora</div>
+          </div>
+        </div>
+        <div class="chat-body">
+          <div class="msg msg-bot">
+            <div>
+              <div class="bubble">Olá! Bem-vindo à TechFix. Você tem um iPhone 13 com tela quebrada, certo? Gostaria de um pré-orçamento? 📱</div>
+              <div class="msg-time">22:45</div>
+            </div>
+          </div>
+          <div class="msg msg-user">
+            <div>
+              <div class="bubble">Sim, por favor! Quanto fica e quanto tempo demora?</div>
+              <div class="msg-time">22:46</div>
+            </div>
+          </div>
+          <div class="msg msg-bot">
+            <div>
+              <div class="bubble">Tela Premium: R$ 890 com garantia de 1 ano. Pronto em 40 minutos. Posso agendar para amanhã às 10h? ✅</div>
+              <div class="msg-time">22:46</div>
+            </div>
+          </div>
+          <div class="typing">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="chat-footer">
+          <div class="chat-inp">Digite uma mensagem...</div>
+          <button class="chat-send">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="pills">
+        <div class="pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Atendimento 24h</div>
+        <div class="pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Triagem automática</div>
+        <div class="pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Follow-up inteligente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="section" id="problemas">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">O Problema</div>
+      <h2 class="section-title">Você está perdendo dinheiro<br><em>todos os dias?</em></h2>
+      <p class="section-sub">A maioria das assistências técnicas sofre dos mesmos problemas operacionais — e a solução está mais perto do que você imagina.</p>
+    </div>
+    <div class="problems-grid">
+      <div class="prob-card reveal">
+        <div class="prob-icon">⏱️</div>
+        <div class="prob-title">Demora na Resposta</div>
+        <p class="prob-desc">O cliente manda mensagem e fica horas esperando. Quando você responde, ele já fechou com o concorrente que atendeu mais rápido.</p>
+        <div class="prob-stat">⚠️ 80% das vendas vão para quem responde primeiro</div>
+      </div>
+      <div class="prob-card reveal reveal-d1">
+        <div class="prob-icon">💸</div>
+        <div class="prob-title">Falta de Follow-up</div>
+        <p class="prob-desc">Você passa o orçamento e esquece de cobrar o cliente. Dinheiro deixado na mesa todo dia por falta de acompanhamento sistemático.</p>
+        <div class="prob-stat">⚠️ 70% dos orçamentos sem follow-up não fecham</div>
+      </div>
+      <div class="prob-card reveal reveal-d2">
+        <div class="prob-icon">🌙</div>
+        <div class="prob-title">Atendimento Limitado</div>
+        <p class="prob-desc">Sua loja fecha às 18h, mas os clientes procuram serviços à noite e fins de semana. Você perde essas vendas enquanto dorme.</p>
+        <div class="prob-stat">⚠️ 40% das buscas acontecem fora do horário comercial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="section" id="solucao">
+  <div class="container">
+    <div class="sol-layout">
+      <div>
+        <div class="reveal">
+          <div class="section-label">A Solução</div>
+          <h2 class="section-title" style="text-align:left">IA treinada para<br><em>vender reparo</em></h2>
+          <p style="font-size:17px;color:var(--text-silver);line-height:1.65;max-width:500px">Desenvolvemos uma IA especializada no nicho de assistência técnica. Ela entende modelos, defeitos, peças e conduz o cliente até o fechamento.</p>
+        </div>
+        <div class="sol-features">
+          <div class="sol-feat reveal">
+            <div class="feat-ico">🌐</div>
+            <div>
+              <div class="feat-title">Atendimento 24/7</div>
+              <p class="feat-desc">Sua loja nunca mais fecha. Responda clientes de madrugada, feriados e fins de semana de forma instantânea.</p>
+            </div>
+          </div>
+          <div class="sol-feat reveal reveal-d1">
+            <div class="feat-ico">🔍</div>
+            <div>
+              <div class="feat-title">Triagem Inteligente</div>
+              <p class="feat-desc">A IA identifica aparelho, defeito e já passa estimativa de preço baseada na sua própria tabela de serviços.</p>
+            </div>
+          </div>
+          <div class="sol-feat reveal reveal-d2">
+            <div class="feat-ico">🎯</div>
+            <div>
+              <div class="feat-title">Recuperação de Vendas</div>
+              <p class="feat-desc">O sistema identifica quem pediu orçamento e não fechou, enviando mensagens persuasivas automaticamente.</p>
+            </div>
+          </div>
+          <div class="sol-feat reveal reveal-d3">
+            <div class="feat-ico">📅</div>
+            <div>
+              <div class="feat-title">Agendamento Automático</div>
+              <p class="feat-desc">Do primeiro contato ao agendamento confirmado, a IA conduz toda a jornada sem precisar da sua intervenção.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sol-right reveal reveal-d2">
+        <div class="sol-img">
+          <img src="https://fixia.destaqueseagora.com.br/images/ai-diagnostic.jpg" alt="Dashboard IA TechFix">
+          <div class="sol-img-ov"></div>
+        </div>
+        <div class="dua-box">
+          <div class="dua-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Método D.U.A. exclusivo
+          </div>
+          <p class="dua-desc">Nossa IA usa o Método D.U.A. (Diagnóstico + Urgência + Agendamento) — validado em mais de 100 assistências — para conduzir cada conversa ao fechamento com naturalidade.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="sobre">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-imgs reveal">
+        <img class="about-main" src="https://fixia.destaqueseagora.com.br/images/fabio-porcelli-profile.png" alt="Fabio Porcelli">
+        <div class="about-badge">
+          <img src="https://fixia.destaqueseagora.com.br/images/fabio-porcelli-palestra.jpg" alt="Fabio Porcelli na Expo Empreender">
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="section-label" style="text-align:left">O Especialista</div>
+        <h2 class="about-title">Conheça<br><em>Fabio Porcelli</em></h2>
+        <p class="about-sub">Especialista em Marketing para Assistências Técnicas</p>
+        <p class="about-text">Há anos no mercado, Fabio ajuda donos de assistências a transformarem suas operações com tecnologia e estratégias de vendas validadas na prática — não teoria.</p>
+        <p class="about-text">Palestrante na Expo Empreender e em podcasts do setor, Fabio traz uma visão direta: menos complexidade, mais resultado. Cada cliente que usa TechFix IA coloca em prática um sistema que ele próprio testou e refinou.</p>
+        <div class="about-stats">
+          <div class="a-stat">
+            <div class="a-stat-num">100+</div>
+            <div class="a-stat-lbl">Empresas aceleradas</div>
+          </div>
+          <div class="a-stat">
+            <div class="a-stat-num">Expo</div>
+            <div class="a-stat-lbl">Empreender Palestrante</div>
+          </div>
+        </div>
+        <a href="https://wa.me/5511922042138?text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20agilizar%20meu%20atendimento!" target="_blank" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar com a Equipe
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section" id="resultados">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Resultados Reais</div>
+      <h2 class="section-title">Quem usa, <em>recomenda</em></h2>
+      <p class="section-sub">Veja como assistências técnicas de todo o Brasil transformaram seus resultados com TechFix IA.</p>
+    </div>
+    <div class="videos-grid">
+      <div class="vid-card reveal" onclick="openVideo('LP1xRcs2s3Q')">
+        <img src="https://img.youtube.com/vi/LP1xRcs2s3Q/hqdefault.jpg" alt="Depoimento">
+        <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-lbl">Parceiro TechFix IA</div>
+      </div>
+      <div class="vid-card reveal reveal-d1" onclick="openVideo('TAavdNlb5x4')">
+        <img src="https://img.youtube.com/vi/TAavdNlb5x4/hqdefault.jpg" alt="Depoimento">
+        <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-lbl">Parceiro TechFix IA</div>
+      </div>
+      <div class="vid-card reveal reveal-d2" onclick="openVideo('wYihS8gvx9M')">
+        <img src="https://img.youtube.com/vi/wYihS8gvx9M/hqdefault.jpg" alt="Depoimento">
+        <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-lbl">Parceiro TechFix IA</div>
+      </div>
+      <div class="vid-card reveal reveal-d3" onclick="openVideo('01rgeUQbPqc')">
+        <img src="https://img.youtube.com/vi/01rgeUQbPqc/hqdefault.jpg" alt="Depoimento">
+        <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-lbl">Parceiro TechFix IA</div>
+      </div>
+      <div class="vid-card reveal" onclick="openVideo('zhHo-P__hVc')">
+        <img src="https://img.youtube.com/vi/zhHo-P__hVc/hqdefault.jpg" alt="Depoimento">
+        <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-lbl">Parceiro TechFix IA</div>
+      </div>
+      <div class="vid-card reveal reveal-d1" onclick="openVideo('WvQE916Knds')">
+        <img src="https://img.youtube.com/vi/WvQE916Knds/hqdefault.jpg" alt="Depoimento">
+        <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-lbl">Parceiro TechFix IA</div>
+      </div>
+      <div class="vid-card reveal reveal-d2" onclick="openVideo('W-DL16HZWdQ')">
+        <img src="https://img.youtube.com/vi/W-DL16HZWdQ/hqdefault.jpg" alt="Depoimento">
+        <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-lbl">Parceiro TechFix IA</div>
+      </div>
+      <div class="vid-card reveal reveal-d3" onclick="openVideo('cX_HmZVfaqI')">
+        <img src="https://img.youtube.com/vi/cX_HmZVfaqI/hqdefault.jpg" alt="Depoimento">
+        <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-lbl">Parceiro TechFix IA</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="rev-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"A automação transformou completamente a forma como atendemos. Hoje não perco mais nenhum lead por demora na resposta."</p>
+        <div class="rev-author"><div class="rev-av">M</div><div><div class="rev-name">Marcos S.</div><div class="rev-role">Dono de Assistência</div></div></div>
+      </div>
+      <div class="rev-card reveal reveal-d1">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"O follow-up automático me deu liberdade para focar na bancada enquanto a IA vende por mim. Mudou meu negócio."</p>
+        <div class="rev-author"><div class="rev-av">R</div><div><div class="rev-name">Ricardo L.</div><div class="rev-role">Especialista em Reparos</div></div></div>
+      </div>
+      <div class="rev-card reveal reveal-d2">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Impressionante como a ferramenta entende o contexto do cliente e direciona para o fechamento com naturalidade."</p>
+        <div class="rev-author"><div class="rev-av">C</div><div><div class="rev-name">Carlos M.</div><div class="rev-role">Gestor de Loja</div></div></div>
+      </div>
+      <div class="rev-card reveal reveal-d3">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"O atendimento 24h realmente funciona e recupera vendas que eu nem sabia que estava perdendo. Vale muito."</p>
+        <div class="rev-author"><div class="rev-av">A</div><div><div class="rev-name">André P.</div><div class="rev-role">Proprietário de Assistência</div></div></div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"A triagem automática economiza horas do meu dia e o cliente já chega pronto para fechar. Melhor investimento."</p>
+        <div class="rev-author"><div class="rev-av">F</div><div><div class="rev-name">Fernando T.</div><div class="rev-role">Empresário do Ramo</div></div></div>
+      </div>
+      <div class="rev-card reveal reveal-d1">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Transformei meu negócio com TechFix IA. Agora tenho atendimento 24/7 e clientes chegam muito mais qualificados."</p>
+        <div class="rev-author"><div class="rev-av">G</div><div><div class="rev-name">Guilherme N.</div><div class="rev-role">Dono de Assistência</div></div></div>
+      </div>
+      <div class="rev-card reveal reveal-d2">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"A IA qualifica leads e faz follow-up automático. Meu faturamento dobrou em 3 meses. Não tem volta."</p>
+        <div class="rev-author"><div class="rev-av">D</div><div><div class="rev-name">Diego A.</div><div class="rev-role">Especialista em Assistência</div></div></div>
+      </div>
+      <div class="rev-card reveal reveal-d3">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"A melhor solução que encontrei para aumentar vendas sem aumentar custos. Recomendo para todos os colegas."</p>
+        <div class="rev-author"><div class="rev-av">L</div><div><div class="rev-name">Lucas O.</div><div class="rev-role">Gestor de Vendas</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="diagnostico">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="section-label reveal" style="margin:0 auto 24px">Atendimento Imediato</div>
+    <h2 class="cta-title reveal reveal-d1">Agende seu<br><em>Diagnóstico Gratuito</em></h2>
+    <p class="cta-sub reveal reveal-d2">Fale diretamente com a TechFix IA, tire suas dúvidas e descubra como a IA pode dobrar o faturamento da sua assistência — sem enrolação.</p>
+    <a href="https://wa.me/5511922042138?text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20agilizar%20meu%20atendimento!" target="_blank" class="btn btn-wa reveal reveal-d3" style="font-size:17px;padding:18px 40px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Quero falar com a IA agora
+    </a>
+    <p class="cta-note reveal reveal-d4">* Conversa segura no WhatsApp. Resposta imediata.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo">
+          <div class="foot-logo-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          TechFix<span style="color:var(--purple-bright)">IA</span>
+        </div>
+        <p class="foot-tag">IA especializada para transformar o atendimento de assistências técnicas em máquinas de vendas — 24 horas por dia.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/fabioporcelli/" target="_blank" class="soc-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-title">Navegação</div>
+        <ul class="foot-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#problemas">Problemas</a></li>
+          <li><a href="#solucao">Solução</a></li>
+          <li><a href="#sobre">Especialista</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-title">Contato</div>
+        <ul class="foot-links">
+          <li><a href="https://wa.me/5511922042138" target="_blank">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/fabioporcelli/" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-title">Legal</div>
+        <ul class="foot-links">
+          <li><a href="https://destaqueseagora.com.br/politicas-de-privacidade-destaque-se/" target="_blank">Privacidade</a></li>
+          <li><a href="https://destaqueseagora.com.br/politicas-de-privacidade-destaque-se/" target="_blank">Termos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="foot-copy">© 2025 TechFix IA. Todos os direitos reservados.</p>
+      <div class="foot-pw">
+        Desenvolvido por
+        <img src="LOGO2 destaque-se NOVO - SEM FUNDO.png" alt="Destaque-se e Agora">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/5511922042138?text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20agilizar%20meu%20atendimento!" target="_blank" class="wa-float" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Video modal -->
+<div class="modal-ov" id="modal" onclick="closeIfBg(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeVideo()">✕</button>
+    <iframe id="vid-iframe" src="" allowfullscreen allow="autoplay"></iframe>
+  </div>
+</div>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)} }), {threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+function toggleMenu(){const m=document.getElementById('nav-mob');m.style.display=m.style.display==='block'?'none':'block'}
+
+function openVideo(id){
+  document.getElementById('vid-iframe').src=`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeVideo(){
+  document.getElementById('modal').classList.remove('open');
+  document.getElementById('vid-iframe').src='';
+  document.body.style.overflow='';
+}
+function closeIfBg(e){if(e.target===document.getElementById('modal'))closeVideo()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
+</script>
+</body>
+</html>
