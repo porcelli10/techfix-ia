@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W8GDC9P2');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FixIA — A IA que Transforma Assistências Técnicas em Máquinas de Vendas</title>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '9407918652606663');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=9407918652606663&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; color: #1a1a1a; background: #fff; }
+
+    /* TIPOGRAFIA */
+    h1 { font-size: 2.8rem; line-height: 1.2; font-weight: 800; }
+    h2 { font-size: 2rem; font-weight: 700; line-height: 1.3; }
+    h3 { font-size: 1.3rem; font-weight: 700; }
+    p  { font-size: 1.05rem; line-height: 1.7; color: #444; }
+
+    /* CORES */
+    :root {
+      --azul: #1A56DB;
+      --azul-escuro: #1340b0;
+      --vermelho: #E02424;
+      --cinza-claro: #f8f9fb;
+      --cinza-borda: #e5e7eb;
+      --verde: #057A55;
+      --texto: #1a1a1a;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      background: #fff;
+      border-bottom: 1px solid var(--cinza-borda);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-size: 1.5rem; font-weight: 800; color: var(--azul); }
+    .logo span { color: #1a1a1a; }
+    .nav-cta {
+      background: var(--azul);
+      color: #fff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--azul-escuro); }
+
+    /* SEÇÃO HERO */
+    .hero {
+      background: linear-gradient(135deg, #0f1f4a 0%, #1A56DB 100%);
+      color: #fff;
+      padding: 5rem 5% 4rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 { color: #fff; max-width: 800px; margin: 0 auto 1rem; }
+    .hero h1 span { color: #FCD34D; }
+    .hero-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: #FCD34D;
+      color: #0f1f4a;
+      padding: 1rem 2.5rem;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
+    .hero-cta-sub { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 0.8rem; }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2.2rem; font-weight: 800; color: #FCD34D; }
+    .stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.75); margin-top: 0.2rem; }
+
+    /* HISTÓRIA (ÂNCORA EMOCIONAL) */
+    .historia {
+      background: #fff9f0;
+      border-left: 5px solid #F59E0B;
+      padding: 3rem 5%;
+      max-width: 860px;
+      margin: 3rem auto;
+      border-radius: 0 12px 12px 0;
+    }
+    .historia-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #92400E;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .historia p { color: #3a2a10; font-size: 1.05rem; }
+    .historia p + p { margin-top: 0.8rem; }
+    .historia .highlight { font-weight: 700; color: #92400E; }
+
+    /* PROBLEMAS */
+    .problemas {
+      background: #fff;
+      padding: 5rem 5%;
+      text-align: center;
+    }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--vermelho);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .section-title { max-width: 700px; margin: 0 auto 1rem; }
+    .section-sub { color: #666; max-width: 560px; margin: 0 auto 3rem; }
+    .problemas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .problema-card {
+      background: #fff5f5;
+      border: 1px solid #fecaca;
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: left;
+    }
+    .problema-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .problema-card h3 { color: var(--vermelho); margin-bottom: 0.6rem; }
+    .problema-card p { color: #555; font-size: 0.97rem; }
+    .problema-stat {
+      display: inline-block;
+      background: var(--vermelho);
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    /* SOLUÇÃO */
+    .solucao {
+      background: var(--cinza-claro);
+      padding: 5rem 5%;
+      text-align: center;
+    }
+    .solucao-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 2.5rem auto 0;
+    }
+    .solucao-card {
+      background: #fff;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: left;
+      transition: box-shadow 0.2s;
+    }
+    .solucao-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .solucao-icon {
+      width: 48px; height: 48px;
+      background: #EBF5FF;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .solucao-card h3 { color: var(--texto); margin-bottom: 0.5rem; }
+    .solucao-card p { color: #666; font-size: 0.95rem; }
+
+    /* MÉTODO DUA */
+    .metodo {
+      background: linear-gradient(135deg, #0f1f4a, #1A56DB);
+      padding: 5rem 5%;
+      color: #fff;
+      text-align: center;
+    }
+    .metodo h2 { color: #fff; margin-bottom: 0.5rem; }
+    .metodo .section-label { color: #FCD34D; }
+    .metodo-desc { color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto 3rem; }
+    .metodo-steps {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .metodo-step {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      flex: 1; min-width: 220px; max-width: 260px;
+      text-align: center;
+    }
+    .metodo-letra {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #FCD34D;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .metodo-step h3 { color: #fff; margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .metodo-step p { color: rgba(255,255,255,0.75); font-size: 0.9rem; }
+    .metodo-resultado {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 12px;
+      padding: 1.2rem 2rem;
+      display: inline-block;
+      margin-top: 2.5rem;
+      color: #FCD34D;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    /* PROVA SOCIAL */
+    .prova-social {
+      background: #fff;
+      padding: 5rem 5%;
+      text-align: center;
+    }
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 2.5rem auto 0;
+    }
+    .depoimento {
+      background: var(--cinza-claro);
+      border-radius: 14px;
+      padding: 1.8rem;
+      text-align: left;
+      border: 1px solid var(--cinza-borda);
+    }
+    .stars { color: #F59E0B; font-size: 1.1rem; margin-bottom: 0.8rem; }
+    .depoimento p { color: #374151; font-size: 0.97rem; font-style: italic; }
+    .depoimento-autor {
+      margin-top: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .autor-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--azul), #60A5FA);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .autor-nome { font-weight: 700; font-size: 0.9rem; color: #1a1a1a; }
+    .autor-cargo { font-size: 0.8rem; color: #6b7280; }
+    .numeros-banner {
+      background: var(--azul);
+      color: #fff;
+      padding: 2.5rem 5%;
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    .num-item { text-align: center; }
+    .num-valor { font-size: 2.5rem; font-weight: 800; }
+    .num-desc { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-top: 0.2rem; }
+
+    /* ESPECIALISTA */
+    .especialista {
+      background: var(--cinza-claro);
+      padding: 5rem 5%;
+    }
+    .especialista-inner {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .esp-foto {
+      width: 240px; height: 240px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #1A56DB, #60A5FA);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+      flex-shrink: 0;
+      color: white;
+    }
+    .esp-conteudo { flex: 1; min-width: 280px; }
+    .esp-conteudo .section-label { text-align: left; }
+    .esp-conteudo h2 { margin-bottom: 1rem; }
+    .esp-conteudo p { margin-bottom: 1rem; }
+    .esp-credenciais {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .credencial {
+      background: #fff;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--azul);
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #fff;
+      padding: 5rem 5%;
+      text-align: center;
+    }
+    .cta-box {
+      background: linear-gradient(135deg, #0f1f4a, #1A56DB);
+      border-radius: 20px;
+      padding: 4rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #fff;
+    }
+    .cta-box .section-label { color: #FCD34D; }
+    .cta-box h2 { color: #fff; margin-bottom: 1rem; }
+    .cta-box p { color: rgba(255,255,255,0.85); max-width: 520px; margin: 0 auto 2rem; }
+    .cta-btn {
+      display: inline-block;
+      background: #FCD34D;
+      color: #0f1f4a;
+      padding: 1.1rem 3rem;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      text-decoration: none;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .cta-btn:hover { transform: translateY(-2px); }
+    .cta-garantia {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+    .cta-reciprocidade {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .cta-reciprocidade strong { color: #FCD34D; }
+
+    /* URGÊNCIA */
+    .urgencia {
+      background: #FEF3C7;
+      border-top: 3px solid #F59E0B;
+      border-bottom: 3px solid #F59E0B;
+      padding: 1.5rem 5%;
+      text-align: center;
+    }
+    .urgencia p {
+      color: #92400E;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f1f4a;
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 5%;
+      text-align: center;
+    }
+    .footer-logo { font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    footer p { font-size: 0.9rem; margin-top: 0.5rem; }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
+      .hero-stats { gap: 1.5rem; }
+      .metodo-steps { flex-direction: column; align-items: center; }
+      .especialista-inner { flex-direction: column; align-items: flex-start; }
+      .numeros-banner { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8GDC9P2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <div class="logo">Fix<span>IA</span></div>
+  <a href="https://wa.me/SEU_NUMERO" class="nav-cta">Falar com a IA agora</a>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-badge">✅ IA especializada em Assistências Técnicas</div>
+  <h1>
+    Enquanto você descansa,<br>
+    <span>sua concorrência está fechando</span><br>
+    os seus clientes.
+  </h1>
+  <p class="hero-sub">
+    A FixIA é a única IA especializada em assistência técnica que atende, faz triagem, passa orçamento e
+    acompanha o lead até o fechamento — 24 horas por dia, 7 dias por semana.
+  </p>
+  <a href="https://wa.me/SEU_NUMERO" class="hero-cta">
+    💬 Conversar com a FixIA agora
+  </a>
+  <p class="hero-cta-sub">Resposta em menos de 10 segundos. Sem cadastro.</p>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">Assistências transformadas</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Atendimento ativo</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3x</div>
+      <div class="stat-label">Mais fechamentos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">&lt;10s</div>
+      <div class="stat-label">Tempo de resposta</div>
+    </div>
+  </div>
+</section>
+
+
+<div class="historia">
+  <div class="historia-label">Isso já aconteceu com você?</div>
+  <p>
+    Era meia-noite de sexta-feira. Um cliente digitou no WhatsApp: <em>"Quanto custa trocar a tela do meu iPhone 14?"</em>
+    Ninguém respondeu. Às 9h do sábado, ele já estava na loja do concorrente que respondeu às 00h03 — automaticamente.
+  </p>
+  <p>
+    <span class="highlight">Você perdeu essa venda enquanto dormia.</span> E provavelmente perdeu dezenas de outras essa semana.
+    Não por falta de competência. Por falta de presença no momento certo.
+  </p>
+</div>
+
+
+<section class="problemas">
+  <div class="section-label">O Problema</div>
+  <h2 class="section-title">Você está perdendo dinheiro<br>neste exato momento</h2>
+  <p class="section-sub">
+    Não porque você é um mau gestor. Mas porque seu negócio depende de você estar acordado para vender.
+  </p>
+
+  <div class="problemas-grid">
+    <div class="problema-card">
+      <div class="problema-icon">⏱️</div>
+      <h3>Demora na resposta = cliente perdido</h3>
+      <p>
+        Pesquisas do setor mostram que o cliente que não recebe resposta em até 5 minutos vai buscar outro
+        prestador. Você não tem como checar o WhatsApp a toda hora — e ele sabe disso.
+      </p>
+      <span class="problema-stat">⚠️ 80% das vendas vão para quem responde primeiro</span>
+    </div>
+
+    <div class="problema-card">
+      <div class="problema-icon">💸</div>
+      <h3>Orçamentos esquecidos = dinheiro no lixo</h3>
+      <p>
+        Você mandou o preço, o cliente ficou de "ver com a esposa" e sumiu. Você não cobrou. Aquele dinheiro
+        foi embora. Todo dia isso se repete, silenciosamente, sem que você perceba.
+      </p>
+      <span class="problema-stat">⚠️ 70% dos orçamentos sem follow-up não fecham</span>
+    </div>
+
+    <div class="problema-card">
+      <div class="problema-icon">🌙</div>
+      <h3>Sua loja "fecha" — a concorrência não</h3>
+      <p>
+        Às 19h você vai para casa. Mas o cliente está no sofá scrollando o celular e pensando em consertar
+        o aparelho. Ele manda mensagem. O concorrente responde. Você nem fica sabendo.
+      </p>
+      <span class="problema-stat">⚠️ 40% das buscas acontecem fora do horário comercial</span>
+    </div>
+
+    <div class="problema-card">
+      <div class="problema-icon">📉</div>
+      <h3>Tráfego pago sem retorno no fim de semana</h3>
+      <p>
+        Você investe em anúncios, os leads chegam no sábado — mas não há ninguém para atender.
+        O custo por clique rodou, o lead esfriou, e o dinheiro foi pelo ralo.
+      </p>
+      <span class="problema-stat">⚠️ Seu ROI despenca fora do horário comercial</span>
+    </div>
+  </div>
+</section>
+
+
+<div class="numeros-banner">
+  <div class="num-item">
+    <div class="num-valor">100+</div>
+    <div class="num-desc">Donos de assistência que já pararam de perder vendas à noite</div>
+  </div>
+  <div class="num-item">
+    <div class="num-valor">R$47mil</div>
+    <div class="num-desc">Média de receita extra gerada no primeiro trimestre de uso</div>
+  </div>
+  <div class="num-item">
+    <div class="num-valor">3x</div>
+    <div class="num-desc">Mais fechamentos em relação ao atendimento manual</div>
+  </div>
+</div>
+
+
+<section class="solucao">
+  <div class="section-label">A Solução</div>
+  <h2 class="section-title">
+    Seja um dos donos de assistência<br>
+    que <em>nunca</em> perde uma venda por falta de resposta
+  </h2>
+  <p class="section-sub">
+    A FixIA foi treinada com centenas de conversas reais de assistências técnicas.
+    Ela não é uma IA genérica — ela entende modelos, defeitos e preços do seu nicho.
+  </p>
+
+  <div class="solucao-grid">
+    <div class="solucao-card">
+      <div class="solucao-icon">🌐</div>
+      <h3>Atendimento 24/7 — enquanto você dorme</h3>
+      <p>Sua loja nunca mais fecha. Responda clientes à meia-noite, no domingo, no feriado — de forma instantânea e natural.</p>
+    </div>
+    <div class="solucao-card">
+      <div class="solucao-icon">🔍</div>
+      <h3>Triagem inteligente de defeitos</h3>
+      <p>A IA identifica o aparelho, o defeito e já passa uma estimativa baseada na sua própria tabela de preços. Sem errar, sem improvisar.</p>
+    </div>
+    <div class="solucao-card">
+      <div class="solucao-icon">🎯</div>
+      <h3>Recuperação automática de orçamentos</h3>
+      <p>Ela identifica quem pediu orçamento e não fechou e envia follow-ups persuasivos automaticamente até converter — ou desistir com elegância.</p>
+    </div>
+    <div class="solucao-card">
+      <div class="solucao-icon">📅</div>
+      <h3>Agendamento automático</h3>
+      <p>Do primeiro contato ao agendamento confirmado: a IA conduz toda a jornada sem precisar da sua intervenção. Você só recebe o cliente.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="metodo">
+  <div class="section-label">Método Exclusivo</div>
+  <h2>O Método D.U.A.</h2>
+  <p class="metodo-desc">
+    Validado em mais de 100 assistências, o Método D.U.A. conduz cada conversa ao fechamento
+    com naturalidade — sem pressão, sem script robótico.
+  </p>
+
+  <div class="metodo-steps">
+    <div class="metodo-step">
+      <div class="metodo-letra">D</div>
+      <h3>Diagnóstico</h3>
+      <p>A IA identifica o aparelho, o defeito e a necessidade real do cliente antes de qualquer proposta.</p>
+    </div>
+    <div class="metodo-step">
+      <div class="metodo-letra">U</div>
+      <h3>Urgência</h3>
+      <p>Com base no diagnóstico, a IA cria contexto e urgência genuína para o cliente tomar uma decisão agora.</p>
+    </div>
+    <div class="metodo-step">
+      <div class="metodo-letra">A</div>
+      <h3>Agendamento</h3>
+      <p>Com o cliente decidido, a IA confirma o agendamento e envia lembrete automático. Você recebe o cliente.</p>
+    </div>
+  </div>
+
+  <div class="metodo-resultado">
+    🏆 Resultado: mais fechamentos, menos trabalho manual, zero lead esquecido
+  </div>
+</section>
+
+
+<section class="prova-social">
+  <div class="section-label">Resultados Reais</div>
+  <h2 class="section-title">Quem já é um Parceiro FixIA recomenda</h2>
+  <p class="section-sub">
+    Donos de assistências técnicas de todo o Brasil já transformaram seus resultados.
+    Veja o que dizem.
+  </p>
+
+  <div class="depoimentos-grid">
+    <div class="depoimento">
+      <div class="stars">★★★★★</div>
+      <p>"Nunca imaginei que uma IA respondesse tão bem quanto eu. Meus clientes nem percebem que é automático. E o melhor: continua atendendo enquanto eu durmo."</p>
+      <div class="depoimento-autor">
+        <div class="autor-avatar">R</div>
+        <div>
+          <div class="autor-nome">Ricardo M.</div>
+          <div class="autor-cargo">iPhone Express · São Paulo/SP</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="depoimento">
+      <div class="stars">★★★★★</div>
+      <p>"Nos primeiros 30 dias já recuperei 12 orçamentos que estavam parados. Dinheiro que eu simplesmente deixava ir embora por falta de follow-up. Impressionante."</p>
+      <div class="depoimento-autor">
+        <div class="autor-avatar">M</div>
+        <div>
+          <div class="autor-nome">Marcos T.</div>
+          <div class="autor-cargo">TechCell · Belo Horizonte/MG</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="depoimento">
+      <div class="stars">★★★★★</div>
+      <p>"Eu estava prestes a contratar mais um atendente. Com a FixIA, não precisei. Ela faz o trabalho de uma pessoa em tempo integral — e não tira folga nem pede aumento."</p>
+      <div class="depoimento-autor">
+        <div class="autor-avatar">A</div>
+        <div>
+          <div class="autor-nome">Ana C.</div>
+          <div class="autor-cargo">Fix Smart · Curitiba/PR</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="especialista">
+  <div class="especialista-inner">
+    <div class="esp-foto">👨‍💼</div>
+    <div class="esp-conteudo">
+      <div class="section-label">O Especialista</div>
+      <h2>Fabio Porcelli</h2>
+      <p>
+        Especialista em marketing e vendas para assistências técnicas, Fabio passou anos dentro de lojas de reparo
+        entendendo o que realmente funciona na prática — não em teoria.
+      </p>
+      <p>
+        Cada funcionalidade da FixIA foi testada e refinada em assistências técnicas reais.
+        Quando você usa a FixIA, está usando um sistema que ele próprio validou com seus clientes.
+      </p>
+      <p>
+        <strong>Fabio não vende promessa. Ele vende o que já funcionou para mais de 100 donos de assistência como você.</strong>
+      </p>
+      <div class="esp-credenciais">
+        <span class="credencial">🎤 Palestrante Expo Empreender</span>
+        <span class="credencial">📻 Podcasts do setor</span>
+        <span class="credencial">🏆 100+ assistências aceleradas</span>
+        <span class="credencial">@fabioporcelli</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="urgencia">
+  <p>
+    ⚡ <strong>Enquanto você lê este texto</strong>, um cliente mandou mensagem no WhatsApp de uma assistência concorrente — e foi atendido em 8 segundos.
+    Cada hora sem a FixIA é receita que não volta.
+  </p>
+</div>
+
+
+<section class="cta-section">
+  <div class="cta-box">
+    <h2>Teste a FixIA agora.<br>Sem compromisso.</h2>
+
+    <div class="cta-reciprocidade">
+      <strong>Nosso presente para você:</strong> converse gratuitamente com a FixIA antes de decidir qualquer coisa.
+      Veja com seus próprios olhos como ela atende seus clientes — sem precisar contratar, sem cartão de crédito.
+    </div>
+
+    <p>
+      Você só decide continuar se sentir que vale cada centavo.
+      Mais de 100 donos de assistência já sentiram isso.
+    </p>
+
+    <br/>
+    <a href="https://wa.me/SEU_NUMERO" class="cta-btn">
+      💬 Quero testar a FixIA agora — de graça
+    </a>
+    <p class="cta-garantia">🔒 Conversa segura no WhatsApp · Resposta em menos de 10 segundos · Sem enrolação</p>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-logo">FixIA</div>
+  <p>IA especializada para transformar assistências técnicas em máquinas de vendas — 24 horas por dia.</p>
+  <br/>
+  <p>
+    <a href="#">Política de Privacidade</a> &nbsp;·&nbsp;
+    <a href="#">Termos de Uso</a> &nbsp;·&nbsp;
+    <a href="https://instagram.com/fabioporcelli">@fabioporcelli</a>
+  </p>
+</footer>
+
+</body>
+</html>
