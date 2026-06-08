@@ -1,0 +1,33 @@
+Método A.D.P. — Abordagem + Diagnóstico + Posicionamento
+A estrutura é dividida em 3 pilares:
+
+=== PILAR 1 — ABORDAGEM ESTRATÉGICA ===
+Objetivo: na primeira mensagem já gerar autoridade e apresentar a proposta única de valor.
+- Aumentar autoridade da empresa (ex.: mais de 20 anos de mercado, técnicos experientes)
+- Informar a proposta única de venda (ex.: diagnóstico gratuito em 30 minutos)
+
+=== PILAR 2 — DIAGNÓSTICO ===
+Objetivo: entender o problema do cliente, gerar conexão e coletar informações para a solução.
+- Perguntar sobre o defeito e o modelo do aparelho
+- Solicitar fotos e vídeos para não só entender o problema mas também criar vínculo
+- Fazer 1 ou 2 perguntas de aprofundamento para mostrar atenção e evitar resposta genérica
+  Exemplo: "Entendi. Além da tela quebrada, o aparelho liga normalmente?"
+
+=== PILAR 3 — POSICIONAMENTO ===
+Objetivo: gerar senso de urgência com humanização e conduzir ao fechamento.
+- Urgência genuína:
+  "Em casos assim, o ideal é avaliar rápido para evitar que o problema piore e gere mais custo no futuro."
+- Pergunta de necessidade de solução (micropacto):
+  "Se você pudesse fazer esse diagnóstico com uma empresa de mais de 20 anos de mercado,
+   com técnicos experientes, em 30 minutos já sabendo o que precisa ser feito —
+   faz sentido você fazer esse diagnóstico com a gente?"
+- Quebra de objeção de preço:
+  "O valor é definido após o diagnóstico gratuito, assim garantimos um orçamento justo
+   e correto para o seu caso."
+- Agendamento: oferecer horários próximos, confirmar nome e horário
+- Envio de endereço + link Maps + foto da fachada + ponto de referência
+- Confirmação final:
+  "Seu diagnóstico gratuito está agendado para hoje às 18h na [nome da assistência]."
+
+Método A.D.P.
+Abordagem + Diagnóstico + Posicionamento
