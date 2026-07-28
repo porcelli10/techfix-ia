@@ -10,8 +10,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="FixIA — Automatize seu atendimento, responda clientes 24/7 e recupere vendas perdidas com Inteligência Artificial especializada em assistências técnicas.">
-<title>FixIA — Assistência Técnica que Nunca Para de Vender</title>
+<meta name="description" content="Estruture o comercial da sua assistência técnica com inteligência artificial, CRM, atendimento, follow-up e gestão. Transforme conversas em mais oportunidades de vendas.">
+<title>FixIA | Estrutura Comercial com IA para Assistências Técnicas</title>
 <!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -130,6 +130,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;b
 .hero-title em{font-style:normal;background:linear-gradient(135deg,#9B60F5,#00D4AA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:18px;color:var(--text-silver);line-height:1.65;margin-bottom:36px;max-width:520px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+.vsl-inner .hero-actions{margin-bottom:0}
+.vsl-inner .hero-actions .btn{font-size:17px;padding:17px 34px}
 .hero-stats{display:flex;gap:32px;padding-top:32px;border-top:1px solid var(--border)}
 .stat-num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--text-white);line-height:1;margin-bottom:4px}
 .stat-num span{color:var(--purple-bright)}
@@ -165,7 +167,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;b
 
 /* ── PROBLEMS ── */
 #problemas{background:linear-gradient(180deg,var(--bg-void) 0%,var(--bg-deep) 50%,var(--bg-void) 100%)}
-.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.problems-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:960px;margin:0 auto}
 .prob-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden;transition:all .3s ease}
 .prob-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E83333,#E87833)}
 .prob-card:hover{background:var(--bg-card-hover);border-color:rgba(232,51,51,.25);transform:translateY(-4px)}
@@ -228,6 +230,57 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;b
 .rev-name{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600}
 .rev-role{font-size:12px;color:var(--text-dim)}
 
+/* ── HERO PILLS LINE ── */
+.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 18px;margin-top:32px;padding-top:28px;border-top:1px solid var(--border);font-size:14px;color:var(--text-dim);font-weight:500}
+.hero-pills span{display:inline-flex;align-items:center;gap:8px}
+.hero-pills span::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal);box-shadow:0 0 6px var(--teal)}
+
+/* ── DESTAQUE (video em evidência) ── */
+#destaque{background:linear-gradient(180deg,var(--bg-void) 0%,var(--bg-deep) 55%,var(--bg-void) 100%)}
+.feat-vid-layout{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.feat-vid-card{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;cursor:pointer;border:1px solid var(--border-purple);box-shadow:0 0 70px var(--purple-glow),0 30px 60px rgba(0,0,0,.5);transition:transform .25s ease}
+.feat-vid-card:hover{transform:translateY(-4px)}
+.feat-vid-card img{width:100%;height:100%;object-fit:cover}
+.feat-vid-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 40%,rgba(0,0,0,.7) 100%);display:flex;align-items:center;justify-content:center}
+.feat-vid-play{width:76px;height:76px;border-radius:50%;background:rgba(118,51,232,.92);border:3px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;padding-left:5px;animation:pulse-border 2s ease-in-out infinite}
+.feat-vid-name{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.02em;margin-bottom:6px}
+.feat-vid-name em{font-style:normal;color:var(--purple-bright)}
+.feat-vid-role{font-size:15px;color:var(--teal);font-weight:600;margin-bottom:18px}
+.feat-vid-text{font-size:16px;color:var(--text-silver);line-height:1.7}
+
+/* ── BENEFÍCIOS ── */
+#beneficios{background:var(--bg-void)}
+.bene-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.bene-item{display:flex;align-items:flex-start;gap:12px;padding:18px 22px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;font-size:15px;color:var(--text-silver);transition:all .25s ease}
+.bene-item:hover{background:var(--bg-card-hover);border-color:var(--border-purple)}
+.bene-item svg{color:var(--teal);flex-shrink:0;margin-top:3px}
+.bene-closing{max-width:760px;margin:44px auto 0;text-align:center;font-family:'Space Grotesk',sans-serif;font-size:clamp(19px,2.4vw,26px);font-weight:600;line-height:1.4;color:var(--text-white)}
+
+/* ── DIFERENCIAÇÃO ── */
+#diferenca{background:linear-gradient(180deg,var(--bg-void) 0%,var(--bg-deep) 50%,var(--bg-void) 100%)}
+.comp-wrap{max-width:900px;margin:0 auto;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--bg-card)}
+.comp-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
+.comp-row:last-child{border-bottom:none}
+.comp-head{background:rgba(255,255,255,.04)}
+.comp-cell{padding:18px 24px;font-size:15px;color:var(--text-silver);display:flex;align-items:center;gap:10px;line-height:1.5}
+.comp-cell:first-child{border-right:1px solid var(--border);color:var(--text-dim)}
+.comp-head .comp-cell{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.06em}
+.comp-head .comp-cell:first-child{color:var(--text-dim)}
+.comp-head .comp-cell:last-child{color:var(--purple-bright)}
+.comp-cell.yes{color:var(--text-white);font-weight:500}
+.comp-cell svg{flex-shrink:0}
+.comp-cell:first-child svg{color:#E85555}
+.comp-cell.yes svg{color:var(--teal)}
+
+/* ── COMO FUNCIONA ── */
+#como-funciona{background:var(--bg-void)}
+.steps-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step-card{position:relative;padding:32px 26px;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;transition:all .3s ease}
+.step-card:hover{background:var(--bg-card-hover);border-color:var(--border-purple);transform:translateY(-4px)}
+.step-num{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--purple-bright);margin-bottom:14px}
+.step-title{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin-bottom:10px}
+.step-desc{font-size:14px;color:var(--text-silver);line-height:1.65}
+
 /* ── CTA FINAL ── */
 #diagnostico{padding:100px 24px;position:relative;overflow:hidden;text-align:center}
 .cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(118,51,232,.18),transparent 70%),linear-gradient(180deg,var(--bg-void) 0%,var(--bg-deep) 50%,var(--bg-void) 100%)}
@@ -281,6 +334,8 @@ footer{background:var(--bg-deep);border-top:1px solid var(--border);padding:60px
   .videos-grid{grid-template-columns:repeat(2,1fr)}
   .reviews-grid{grid-template-columns:repeat(2,1fr)}
   .problems-grid{grid-template-columns:1fr}
+  .feat-vid-layout{grid-template-columns:1fr;gap:32px}
+  .steps-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
   .section{padding:72px 20px}
@@ -296,6 +351,9 @@ footer{background:var(--bg-deep);border-top:1px solid var(--border);padding:60px
   .hero-actions{flex-direction:column}
   .hero-actions .btn{width:100%;justify-content:center}
   .about-imgs{max-width:100%}
+  .bene-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
+  .comp-cell{padding:14px 16px;font-size:14px}
 }
 </style>
 </head>
@@ -315,10 +373,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-badge" style="text-align:center">
       <span class="badge">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        ✅ Mais de 100 assistências técnicas já transformadas
+        Estrutura comercial com IA para assistências técnicas
       </span>
     </div>
-    <h1 class="vsl-title">Enquanto você descansa,<br><em>sua concorrência está fechando os seus clientes.</em></h1>
+    <h1 class="vsl-title">Transformamos o WhatsApp da sua assistência em uma <em>operação comercial</em> que atende, acompanha e converte.</h1>
 
     <!-- VSL Video Facade -->
     <div class="vsl-video-wrap" id="vslWrap" onclick="loadVSL()" style="cursor:pointer">
@@ -337,89 +395,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <p class="vsl-sub">A FixIA é a única IA especializada em assistência técnica que atende, faz triagem, passa orçamento e acompanha o lead até o fechamento — 24 horas por dia, 7 dias por semana.</p>
+    <p class="vsl-sub">A FixIA une inteligência artificial, processo comercial, CRM, follow-up e gestão para sua assistência responder mais rápido, recuperar oportunidades e vender com mais previsibilidade.</p>
 
-    <a href="https://wa.me/5511953719569?text=Ol%C3%A1,%20tenho%20interesse%20e%20gostaria%20de%20agilizar%20meu%20atendimento." target="_blank" class="btn btn-wa vsl-btn">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Falar com a IA agora
-    </a>
+    <div class="hero-actions" style="justify-content:center">
+      <a href="https://wa.me/5511953719569?text=Ol%C3%A1,%20quero%20estruturar%20o%20comercial%20da%20minha%20assist%C3%AAncia%20t%C3%A9cnica." target="_blank" class="btn btn-primary">
+        Quero estruturar meu comercial
+      </a>
+      <a href="#destaque" class="btn btn-outline">
+        Ver a FixIA funcionando
+      </a>
+    </div>
 
-    <div class="hero-stats" style="justify-content:center;margin-top:40px">
-      <div>
-        <div class="stat-num">100<span>+</span></div>
-        <div class="stat-lbl">Assistências transformadas</div>
-      </div>
-      <div>
-        <div class="stat-num">24<span>/7</span></div>
-        <div class="stat-lbl">Atendimento ativo</div>
-      </div>
-      <div>
-        <div class="stat-num">3<span>x</span></div>
-        <div class="stat-lbl">Mais fechamentos</div>
-      </div>
+    <div class="hero-pills">
+      <span>Atendimento inteligente</span>
+      <span>Processo comercial</span>
+      <span>Follow-up</span>
+      <span>CRM</span>
+      <span>Gestão</span>
     </div>
   </div>
 </section>
-
-<!-- HISTÓRIA -->
-<div style="background:#fff9f0;border-left:5px solid #F59E0B;padding:2.5rem 5%;max-width:860px;margin:3rem auto;border-radius:0 12px 12px 0">
-  <div style="font-size:0.8rem;font-weight:700;color:#92400E;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem">Isso já aconteceu com você?</div>
-  <p style="color:#3a2a10;font-size:1.05rem;line-height:1.7">
-    Era meia-noite de sexta-feira. Um cliente digitou no WhatsApp: <em>"Quanto custa trocar a tela do meu iPhone 14?"</em>
-    Ninguém respondeu. Às 9h do sábado, ele já estava na loja do concorrente que respondeu às 00h03 — automaticamente.
-  </p>
-  <p style="color:#3a2a10;font-size:1.05rem;line-height:1.7;margin-top:0.8rem">
-    <strong style="color:#92400E">Você perdeu essa venda enquanto dormia.</strong> E provavelmente perdeu dezenas de outras essa semana.
-    Não por falta de competência. Por falta de presença no momento certo.
-  </p>
-</div>
 
 <!-- PROBLEMS -->
 <section class="section" id="problemas">
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label">O Problema</div>
-      <h2 class="section-title">Você está perdendo dinheiro<br><em>neste exato momento</em></h2>
-      <p class="section-sub">Não porque você é um mau gestor. Mas porque seu negócio depende de você estar acordado para vender.</p>
+      <h2 class="section-title">Seu problema não é apenas gerar mais leads.<br><em>É o que acontece depois que eles chegam.</em></h2>
+      <p class="section-sub">Sua assistência pode até receber dezenas de mensagens todos os dias. Mas, sem uma estrutura comercial, muitos clientes esperam demais, desaparecem depois do orçamento ou acabam fechando com o concorrente.</p>
     </div>
     <div class="problems-grid">
       <div class="prob-card reveal">
-        <div class="prob-icon">⏱️</div>
-        <div class="prob-title">Demora na resposta = cliente perdido</div>
-        <p class="prob-desc">Pesquisas do setor mostram que o cliente que não recebe resposta em até 5 minutos vai buscar outro prestador. Você não tem como checar o WhatsApp a toda hora — e ele sabe disso.</p>
-        <div class="prob-stat">⚠️ 80% das vendas vão para quem responde primeiro</div>
+        <div class="prob-icon">🔀</div>
+        <div class="prob-title">Atendimento sem padrão</div>
+        <p class="prob-desc">Cada pessoa responde de uma maneira e o cliente não é conduzido até o fechamento.</p>
       </div>
       <div class="prob-card reveal reveal-d1">
         <div class="prob-icon">💸</div>
-        <div class="prob-title">Orçamentos esquecidos = dinheiro no lixo</div>
-        <p class="prob-desc">Você mandou o preço, o cliente ficou de "ver com a esposa" e sumiu. Você não cobrou. Aquele dinheiro foi embora. Todo dia isso se repete, silenciosamente, sem que você perceba.</p>
-        <div class="prob-stat">⚠️ 70% dos orçamentos sem follow-up não fecham</div>
+        <div class="prob-title">Orçamentos sem acompanhamento</div>
+        <p class="prob-desc">O preço é enviado, o cliente desaparece e ninguém realiza o follow-up.</p>
       </div>
       <div class="prob-card reveal reveal-d2">
-        <div class="prob-icon">🌙</div>
-        <div class="prob-title">Sua loja "fecha" — a concorrência não</div>
-        <p class="prob-desc">Às 19h você vai para casa. Mas o cliente está no sofá scrollando o celular e pensando em consertar o aparelho. Ele manda mensagem. O concorrente responde. Você nem fica sabendo.</p>
-        <div class="prob-stat">⚠️ 40% das buscas acontecem fora do horário comercial</div>
+        <div class="prob-icon">🧍</div>
+        <div class="prob-title">Dependência do dono</div>
+        <p class="prob-desc">As vendas dependem de você estar disponível, acompanhando o WhatsApp e cobrando a equipe.</p>
+      </div>
+      <div class="prob-card reveal reveal-d3">
+        <div class="prob-icon">📉</div>
+        <div class="prob-title">Falta de controle comercial</div>
+        <p class="prob-desc">Você não sabe quantos clientes chegaram, quantos receberam orçamento e quantos realmente fecharam.</p>
+      </div>
+    </div>
+    <p class="bene-closing reveal">Não basta responder rápido. É preciso ter um processo que transforme conversas em serviços fechados.</p>
+  </div>
+</section>
+
+<!-- DESTAQUE — DEPOIMENTO EM EVIDÊNCIA -->
+<section class="section" id="destaque">
+  <div class="container">
+    <div class="feat-vid-layout">
+      <div class="feat-vid-card reveal" onclick="openVideo('ucUqJtF5PoY')">
+        <img src="https://img.youtube.com/vi/ucUqJtF5PoY/maxresdefault.jpg" alt="Depoimento de Dioniso — DicaCell" loading="lazy">
+        <div class="feat-vid-ov">
+          <div class="feat-vid-play">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="section-label">Depoimento em destaque</div>
+        <div class="feat-vid-name"><em>Dioniso</em></div>
+        <div class="feat-vid-role">DicaCell</div>
+        <p class="feat-vid-text">Veja como foi estruturar o comercial da assistência com a FixIA — atendimento, acompanhamento das oportunidades e um processo que conduz o cliente até o fechamento.</p>
       </div>
     </div>
   </div>
 </section>
-
-<!-- NÚMEROS -->
-<div style="background:var(--purple);padding:2.5rem 5%;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap">
-  <div style="text-align:center">
-    <div style="font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:800;color:#fff">100+</div>
-    <div style="font-size:0.9rem;color:rgba(255,255,255,0.8);margin-top:0.2rem">Donos de assistência que já pararam de perder vendas à noite</div>
-  </div>
-  <div style="text-align:center">
-    <div style="font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:800;color:#fff">R$47mil</div>
-    <div style="font-size:0.9rem;color:rgba(255,255,255,0.8);margin-top:0.2rem">Média de receita extra gerada no primeiro trimestre de uso</div>
-  </div>
-  <div style="text-align:center">
-    <div style="font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:800;color:#fff">3x</div>
-    <div style="font-size:0.9rem;color:rgba(255,255,255,0.8);margin-top:0.2rem">Mais fechamentos em relação ao atendimento manual</div>
-  </div>
-</div>
 
 <!-- SOLUTION -->
 <section class="section" id="solucao">
@@ -428,36 +479,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <div class="reveal">
           <div class="section-label">A Solução</div>
-          <h2 class="section-title" style="text-align:left">Seja um dos donos de assistência<br>que <em>nunca</em> perde uma venda por falta de resposta</h2>
-          <p style="font-size:17px;color:var(--text-silver);line-height:1.65;max-width:500px">A FixIA foi treinada com centenas de conversas reais de assistências técnicas. Ela não é uma IA genérica — ela entende modelos, defeitos e preços do seu nicho.</p>
+          <h2 class="section-title" style="text-align:left">Não entregamos apenas uma IA.<br><em>Implantamos uma estrutura comercial.</em></h2>
+          <p style="font-size:17px;color:var(--text-silver);line-height:1.65;max-width:500px">A FixIA organiza toda a jornada do cliente, desde a primeira mensagem até o agendamento, fechamento ou transferência para sua equipe.</p>
         </div>
         <div class="sol-features">
           <div class="sol-feat reveal">
-            <div class="feat-ico">🌐</div>
+            <div class="feat-ico">🤖</div>
             <div>
-              <div class="feat-title">Atendimento 24/7 — enquanto você dorme</div>
-              <p class="feat-desc">Sua loja nunca mais fecha. Responda clientes à meia-noite, no domingo, no feriado — de forma instantânea e natural, sem pausar o tráfego pago nos finais de semana.</p>
+              <div class="feat-title">IA comercial especializada</div>
+              <p class="feat-desc">Atende imediatamente, entende a necessidade do cliente, coleta informações e conduz a conversa.</p>
             </div>
           </div>
           <div class="sol-feat reveal reveal-d1">
-            <div class="feat-ico">🔍</div>
+            <div class="feat-ico">🧭</div>
             <div>
-              <div class="feat-title">Triagem inteligente de defeitos</div>
-              <p class="feat-desc">A IA identifica o aparelho, o defeito e já passa uma estimativa baseada na sua própria tabela de preços. Sem errar, sem improvisar.</p>
+              <div class="feat-title">Processo de atendimento</div>
+              <p class="feat-desc">Criamos etapas, perguntas, argumentos e direcionamentos específicos para sua assistência.</p>
             </div>
           </div>
           <div class="sol-feat reveal reveal-d2">
-            <div class="feat-ico">🎯</div>
+            <div class="feat-ico">🗂️</div>
             <div>
-              <div class="feat-title">Recuperação automática de orçamentos</div>
-              <p class="feat-desc">Ela identifica quem pediu orçamento e não fechou e envia follow-ups persuasivos automaticamente até converter — ou desistir com elegância.</p>
+              <div class="feat-title">CRM e organização dos leads</div>
+              <p class="feat-desc">Cada oportunidade é registrada e acompanhada dentro do processo comercial.</p>
             </div>
           </div>
           <div class="sol-feat reveal reveal-d3">
-            <div class="feat-ico">📅</div>
+            <div class="feat-ico">🔁</div>
             <div>
-              <div class="feat-title">Agendamento automático</div>
-              <p class="feat-desc">Do primeiro contato ao agendamento confirmado: a IA conduz toda a jornada sem precisar da sua intervenção. Você só recebe o cliente.</p>
+              <div class="feat-title">Follow-up automatizado</div>
+              <p class="feat-desc">Clientes que pediram orçamento e desapareceram voltam a ser acompanhados.</p>
+            </div>
+          </div>
+          <div class="sol-feat reveal">
+            <div class="feat-ico">🤝</div>
+            <div>
+              <div class="feat-title">Transferência para vendedores</div>
+              <p class="feat-desc">Quando necessário, a IA transfere a oportunidade com todas as informações coletadas.</p>
+            </div>
+          </div>
+          <div class="sol-feat reveal reveal-d1">
+            <div class="feat-ico">📊</div>
+            <div>
+              <div class="feat-title">Indicadores e gestão</div>
+              <p class="feat-desc">Você acompanha o que está acontecendo e identifica onde sua assistência está perdendo vendas.</p>
             </div>
           </div>
         </div>
@@ -472,10 +537,100 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             Método D.U.A. exclusivo
           </div>
-          <p class="dua-desc">Nossa IA usa o Método D.U.A. (Diagnóstico + Urgência + Agendamento) — validado em mais de 100 assistências — para conduzir cada conversa ao fechamento com naturalidade.</p>
+          <p class="dua-desc">Nossa IA usa o Método D.U.A. (Diagnóstico + Urgência + Agendamento) — validado em mais de 50 assistências — para conduzir cada conversa ao fechamento com naturalidade.</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAÇÃO -->
+<section class="section" id="diferenca">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">A Diferença</div>
+      <h2 class="section-title">Sua assistência não precisa de mais um chatbot.<br><em>Precisa de um comercial que funcione.</em></h2>
+      <p class="section-sub">Um chatbot apenas responde perguntas. A FixIA ajuda a estruturar atendimento, qualificação, acompanhamento, agendamento e gestão comercial.</p>
+    </div>
+    <div class="comp-wrap reveal">
+      <div class="comp-row comp-head">
+        <div class="comp-cell">Chatbot comum</div>
+        <div class="comp-cell">Estrutura FixIA</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Apenas responde mensagens</div>
+        <div class="comp-cell yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Conduz a jornada comercial</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Funciona de maneira isolada</div>
+        <div class="comp-cell yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Atua integrada ao processo</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Não acompanha oportunidades</div>
+        <div class="comp-cell yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Realiza follow-up</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Não organiza os vendedores</div>
+        <div class="comp-cell yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Transfere leads qualificados</div>
+      </div>
+      <div class="comp-row">
+        <div class="comp-cell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Não gera controle comercial</div>
+        <div class="comp-cell yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Registra etapas e indicadores</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="section" id="como-funciona">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Como Funciona</div>
+      <h2 class="section-title">Da desorganização comercial<br>a uma <em>operação estruturada</em></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">ETAPA 1</div>
+        <div class="step-title">Diagnóstico</div>
+        <p class="step-desc">Analisamos seu atendimento, seus serviços, sua equipe, seus preços e a maneira como os clientes chegam.</p>
+      </div>
+      <div class="step-card reveal reveal-d1">
+        <div class="step-num">ETAPA 2</div>
+        <div class="step-title">Estruturação</div>
+        <p class="step-desc">Construímos o processo comercial, as etapas do atendimento, os critérios de qualificação e os follow-ups.</p>
+      </div>
+      <div class="step-card reveal reveal-d2">
+        <div class="step-num">ETAPA 3</div>
+        <div class="step-title">Implantação</div>
+        <p class="step-desc">Configuramos a IA, o CRM, as integrações e as transferências para sua equipe.</p>
+      </div>
+      <div class="step-card reveal reveal-d3">
+        <div class="step-num">ETAPA 4</div>
+        <div class="step-title">Otimização</div>
+        <p class="step-desc">Acompanhamos as conversas e melhoramos continuamente o processo para aumentar a eficiência comercial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="section" id="beneficios">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">O que muda na prática</div>
+      <h2 class="section-title">Uma operação criada para<br>vender com <em>mais controle</em></h2>
+    </div>
+    <div class="bene-grid">
+      <div class="bene-item reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Respostas mais rápidas</div>
+      <div class="bene-item reveal reveal-d1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Menos clientes esquecidos</div>
+      <div class="bene-item reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mais orçamentos acompanhados</div>
+      <div class="bene-item reveal reveal-d1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Atendimento padronizado</div>
+      <div class="bene-item reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Leads mais qualificados para a equipe</div>
+      <div class="bene-item reveal reveal-d1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Menos dependência do proprietário</div>
+      <div class="bene-item reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mais clareza sobre os resultados comerciais</div>
+      <div class="bene-item reveal reveal-d1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cada oportunidade registrada e acompanhada</div>
+    </div>
+    <p class="bene-closing reveal">Mais conversas sendo acompanhadas. Mais oportunidades chegando ao fechamento.</p>
   </div>
 </section>
 
@@ -491,18 +646,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="reveal reveal-d2">
         <div class="section-label" style="text-align:left">O Especialista</div>
-        <h2 class="about-title">Conheça<br><em>Fabio Porcelli</em></h2>
-        <p class="about-sub">Especialista em marketing e vendas para Assistências Técnicas</p>
-        <p class="about-text">Especialista em marketing e vendas para assistências técnicas, Fabio passou anos dentro de lojas de reparo entendendo o que realmente funciona na prática — não em teoria.</p>
-        <p class="about-text">Cada funcionalidade da FixIA foi testada e refinada em assistências técnicas reais. Quando você usa a FixIA, está usando um sistema que ele próprio validou com seus clientes.</p>
-        <p class="about-text"><strong>Fabio não vende promessa. Ele vende o que já funcionou para mais de 100 donos de assistência como você.</strong></p>
+        <h2 class="about-title">Quem está<br>por trás da <em>FixIA</em></h2>
+        <p class="about-sub">Especialista em estruturação comercial para assistências técnicas</p>
+        <p class="about-text">Fábio Porcelli é especialista em estruturação comercial para assistências técnicas.</p>
+        <p class="about-text">Depois de acompanhar de perto o atendimento e as vendas de dezenas de empresas do segmento, desenvolveu uma metodologia que conecta marketing, processo comercial, atendimento, CRM, follow-up e inteligência artificial.</p>
+        <p class="about-text"><strong>A FixIA nasceu para resolver um problema que vai além da demora nas respostas: a falta de uma estrutura capaz de acompanhar cada oportunidade até o fechamento.</strong></p>
+        <p class="about-text" style="font-size:14px;color:var(--text-dim)">Fundador da Destaque-se e da FixIA • Especialista em vendas para assistências técnicas • Mais de 50 empresas aceleradas</p>
         <a href="https://www.instagram.com/fabioporcelli/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;color:var(--teal);font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--teal);border-radius:8px;padding:8px 16px;transition:opacity .2s" onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           @fabioporcelli
         </a>
         <div class="about-stats">
           <div class="a-stat">
-            <div class="a-stat-num">100+</div>
+            <div class="a-stat-num">50+</div>
             <div class="a-stat-lbl">Empresas aceleradas</div>
           </div>
           <div class="a-stat">
@@ -510,9 +666,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="a-stat-lbl">Empreender Palestrante</div>
           </div>
         </div>
-        <a href="https://wa.me/5511953719569?text=Ol%C3%A1,%20tenho%20interesse%20e%20gostaria%20de%20agilizar%20meu%20atendimento." target="_blank" class="btn btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Falar com a IA agora
+        <a href="https://wa.me/5511953719569?text=Ol%C3%A1,%20quero%20estruturar%20o%20comercial%20da%20minha%20assist%C3%AAncia%20t%C3%A9cnica." target="_blank" class="btn btn-primary">
+          Quero estruturar meu comercial
         </a>
       </div>
     </div>
@@ -524,51 +679,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label">Resultados Reais</div>
-      <h2 class="section-title">Quem já é um <em>Parceiro FixIA</em> recomenda</h2>
-      <p class="section-sub">Donos de assistências técnicas de todo o Brasil já transformaram seus resultados. Veja o que dizem.</p>
+      <h2 class="section-title">Resultados de quem estruturou<br>o comercial com a <em>FixIA</em></h2>
+      <p class="section-sub">Donos de assistências técnicas de todo o Brasil já organizaram o atendimento e o acompanhamento das oportunidades. Veja o que dizem.</p>
     </div>
     <div class="videos-grid">
-      <div class="vid-card reveal" onclick="openVideo('ucUqJtF5PoY')">
-        <img src="https://img.youtube.com/vi/ucUqJtF5PoY/hqdefault.jpg" alt="Depoimento Dioniso - DicaCell">
-        <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-        <div class="vid-lbl">Dioniso — DicaCell</div>
-      </div>
-      <div class="vid-card reveal reveal-d1" onclick="openVideo('LP1xRcs2s3Q')">
+      <div class="vid-card reveal" onclick="openVideo('LP1xRcs2s3Q')">
         <img src="https://img.youtube.com/vi/LP1xRcs2s3Q/hqdefault.jpg" alt="Depoimento">
         <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
         <div class="vid-lbl">Parceiro FixIA</div>
       </div>
-      <div class="vid-card reveal reveal-d2" onclick="openVideo('TAavdNlb5x4')">
+      <div class="vid-card reveal reveal-d1" onclick="openVideo('TAavdNlb5x4')">
         <img src="https://img.youtube.com/vi/TAavdNlb5x4/hqdefault.jpg" alt="Depoimento">
         <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
         <div class="vid-lbl">Parceiro FixIA</div>
       </div>
-      <div class="vid-card reveal reveal-d3" onclick="openVideo('wYihS8gvx9M')">
+      <div class="vid-card reveal reveal-d2" onclick="openVideo('wYihS8gvx9M')">
         <img src="https://img.youtube.com/vi/wYihS8gvx9M/hqdefault.jpg" alt="Depoimento">
         <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
         <div class="vid-lbl">Parceiro FixIA</div>
       </div>
-      <div class="vid-card reveal" onclick="openVideo('01rgeUQbPqc')">
+      <div class="vid-card reveal reveal-d3" onclick="openVideo('01rgeUQbPqc')">
         <img src="https://img.youtube.com/vi/01rgeUQbPqc/hqdefault.jpg" alt="Depoimento">
         <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
         <div class="vid-lbl">Parceiro FixIA</div>
       </div>
-      <div class="vid-card reveal reveal-d1" onclick="openVideo('zhHo-P__hVc')">
+      <div class="vid-card reveal" onclick="openVideo('zhHo-P__hVc')">
         <img src="https://img.youtube.com/vi/zhHo-P__hVc/hqdefault.jpg" alt="Depoimento">
         <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
         <div class="vid-lbl">Parceiro FixIA</div>
       </div>
-      <div class="vid-card reveal reveal-d2" onclick="openVideo('WvQE916Knds')">
+      <div class="vid-card reveal reveal-d1" onclick="openVideo('WvQE916Knds')">
         <img src="https://img.youtube.com/vi/WvQE916Knds/hqdefault.jpg" alt="Depoimento">
         <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
         <div class="vid-lbl">Parceiro FixIA</div>
       </div>
-      <div class="vid-card reveal reveal-d3" onclick="openVideo('W-DL16HZWdQ')">
+      <div class="vid-card reveal reveal-d2" onclick="openVideo('W-DL16HZWdQ')">
         <img src="https://img.youtube.com/vi/W-DL16HZWdQ/hqdefault.jpg" alt="Depoimento">
         <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
         <div class="vid-lbl">Parceiro FixIA</div>
       </div>
-      <div class="vid-card reveal" onclick="openVideo('cX_HmZVfaqI')">
+      <div class="vid-card reveal reveal-d3" onclick="openVideo('cX_HmZVfaqI')">
         <img src="https://img.youtube.com/vi/cX_HmZVfaqI/hqdefault.jpg" alt="Depoimento">
         <div class="vid-ov"><div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
         <div class="vid-lbl">Parceiro FixIA</div>
@@ -585,7 +735,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- URGÊNCIA -->
 <div style="background:#FEF3C7;border-top:3px solid #F59E0B;border-bottom:3px solid #F59E0B;padding:1.5rem 5%;text-align:center">
   <p style="color:#92400E;font-weight:600;font-size:1rem;font-family:'Space Grotesk',sans-serif">
-    ⚡ <strong>Enquanto você lê este texto</strong>, um cliente mandou mensagem no WhatsApp de uma assistência concorrente — e foi atendido em 8 segundos. Cada hora sem a FixIA é receita que não volta.
+    ⚡ <strong>Sua assistência não precisa apenas de uma IA.</strong> Precisa de uma estrutura comercial que funcione.
   </p>
 </div>
 
@@ -593,14 +743,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="diagnostico">
   <div class="cta-bg"></div>
   <div class="cta-inner">
-    <div class="section-label reveal" style="margin:0 auto 24px">Atendimento Imediato</div>
-    <h2 class="cta-title reveal reveal-d1">Veja a FixIA<br><em>funcionando na prática</em></h2>
-    <p class="cta-sub reveal reveal-d2">Fale diretamente com a FixIA, tire suas dúvidas e descubra como a IA pode dobrar o faturamento da sua assistência.</p>
-    <a href="https://wa.me/5511953719569?text=Ol%C3%A1,%20tenho%20interesse%20e%20gostaria%20de%20agilizar%20meu%20atendimento." target="_blank" class="btn btn-wa reveal reveal-d3" style="font-size:17px;padding:18px 40px">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Falar com a IA agora
-    </a>
-    <p class="cta-note reveal reveal-d4">🔒 Conversa segura no WhatsApp · Resposta em menos de 10 segundos · Sem enrolação</p>
+    <div class="section-label reveal" style="margin:0 auto 24px">Diagnóstico Comercial</div>
+    <h2 class="cta-title reveal reveal-d1">Descubra onde sua assistência<br><em>está perdendo vendas</em></h2>
+    <p class="cta-sub reveal reveal-d2">Vamos analisar seu atendimento atual e mostrar como estruturar uma operação comercial com IA, processo, follow-up e gestão.</p>
+    <div class="hero-actions reveal reveal-d3" style="justify-content:center;margin-bottom:0">
+      <a href="https://wa.me/5511953719569?text=Ol%C3%A1,%20quero%20um%20diagn%C3%B3stico%20comercial%20para%20minha%20assist%C3%AAncia%20t%C3%A9cnica." target="_blank" class="btn btn-primary" style="font-size:17px;padding:18px 40px">
+        Quero um diagnóstico comercial
+      </a>
+      <a href="https://wa.me/5511953719569?text=Ol%C3%A1,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20FixIA." target="_blank" class="btn btn-outline" style="font-size:17px;padding:18px 40px">
+        Falar com um especialista
+      </a>
+    </div>
+    <p class="cta-note reveal reveal-d4">🔒 Conversa segura no WhatsApp · Sem compromisso · Sem enrolação</p>
   </div>
 </section>
 
@@ -615,7 +769,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           Fix<span style="color:var(--purple-bright)">IA</span>
         </div>
-        <p class="foot-tag">IA especializada para transformar o atendimento de assistências técnicas em máquinas de vendas — 24 horas por dia.</p>
+        <p class="foot-tag">FixIA — Estrutura comercial com inteligência artificial para assistências técnicas.</p>
         <div class="foot-social">
           <a href="https://www.instagram.com/fabioporcelli/" target="_blank" class="soc-btn" aria-label="Instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -626,10 +780,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="foot-col-title">Navegação</div>
         <ul class="foot-links">
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#problemas">Problemas</a></li>
-          <li><a href="#solucao">Solução</a></li>
+          <li><a href="#problemas">O problema</a></li>
+          <li><a href="#solucao">A estrutura</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
           <li><a href="#sobre">Especialista</a></li>
           <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#diagnostico">Diagnóstico</a></li>
         </ul>
       </div>
       <div>
@@ -672,7 +828,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
 
 // VSL Facade — carrega YouTube apenas ao clicar
 function loadVSL() {
