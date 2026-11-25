@@ -222,8 +222,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;b
 .ig-media img,.ig-media iframe,.ig-media .yt{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
 .ig-media img{transition:opacity .4s}
 .ig-post.playing .ig-media img{opacity:0;pointer-events:none}
-.ig-sound{position:absolute;right:12px;bottom:12px;z-index:3;background:rgba(0,0,0,.7);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;display:none}
-.ig-post.playing.muted .ig-sound{display:block}
+.ig-sound{position:absolute;inset:0;z-index:3;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.28);border:0;cursor:pointer;padding:16px}
+.ig-post.playing.muted .ig-sound{display:flex}
+.ig-sound span{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#111;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;padding:16px 26px;border-radius:999px;box-shadow:0 10px 40px rgba(0,0,0,.55);animation:snd 1.3s ease-in-out infinite}
+@keyframes snd{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
 .ig-cap{padding:12px 14px 16px;font-size:14px;color:var(--text-silver)}
 .ig-cap b{color:#fff}
 .reviews-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -432,52 +434,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="ig-feed" id="depoimentos" style="scroll-margin-top:90px">
       <div class="ig-post vert" data-id="Q769b9Jm-Ps">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/Q769b9Jm-Ps/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button">🔇 Toque para ativar o som</button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/Q769b9Jm-Ps/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post vert" data-id="-rvi_zuDZ-Q">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/-rvi_zuDZ-Q/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button">🔇 Toque para ativar o som</button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/-rvi_zuDZ-Q/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="LP1xRcs2s3Q">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/LP1xRcs2s3Q/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button">🔇 Toque para ativar o som</button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/LP1xRcs2s3Q/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="TAavdNlb5x4">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/TAavdNlb5x4/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button">🔇 Toque para ativar o som</button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/TAavdNlb5x4/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post vert" data-id="wYihS8gvx9M">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/wYihS8gvx9M/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button">🔇 Toque para ativar o som</button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/wYihS8gvx9M/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="01rgeUQbPqc">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/01rgeUQbPqc/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button">🔇 Toque para ativar o som</button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/01rgeUQbPqc/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="zhHo-P__hVc">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/zhHo-P__hVc/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button">🔇 Toque para ativar o som</button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/zhHo-P__hVc/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post vert" data-id="WvQE916Knds">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/WvQE916Knds/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button">🔇 Toque para ativar o som</button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/WvQE916Knds/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="W-DL16HZWdQ">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/W-DL16HZWdQ/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button">🔇 Toque para ativar o som</button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/W-DL16HZWdQ/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="cX_HmZVfaqI">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/cX_HmZVfaqI/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button">🔇 Toque para ativar o som</button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/cX_HmZVfaqI/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
     </div>
