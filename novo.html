@@ -24,6 +24,9 @@ fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=993466089760745&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel -->
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://img.youtube.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,700;0,900;1,700&family=Caveat:wght@700&family=DM+Mono:wght@400;500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -154,8 +157,10 @@ h1,h2,h3{font-family:var(--disp);font-weight:900;line-height:1.08;letter-spacing
 .ig-media img,.ig-media iframe,.ig-media .yt{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
 .ig-media img{transition:opacity .4s}
 .ig-post.playing .ig-media img{opacity:0;pointer-events:none}
-.ig-sound{position:absolute;inset:0;z-index:3;display:none;align-items:center;justify-content:center;background:rgba(22,15,46,.3);border:0;cursor:pointer;padding:16px}
-.ig-post.playing.muted .ig-sound{display:flex}
+.ig-sound{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;background:rgba(22,15,46,.3);border:0;cursor:pointer;padding:16px}
+.ig-stage{position:absolute;z-index:5;background:#000;opacity:0;pointer-events:none;transition:opacity .25s}
+.ig-stage.on{opacity:1;pointer-events:auto}
+.ig-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .ig-sound span{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--ink);border:2.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);font:700 19px var(--body);padding:15px 24px;animation:snd 1.2s ease-in-out infinite}
 @keyframes snd{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.08) rotate(-2deg)}}
 .ig-act{display:flex;align-items:center;gap:15px;padding:11px 14px 2px}
@@ -258,13 +263,33 @@ h1,h2,h3{font-family:var(--disp);font-weight:900;line-height:1.08;letter-spacing
 .dua{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:70px;align-items:center;margin-top:90px}
 .chat{background:#ECE5DD;border:2.5px solid var(--ink);box-shadow:10px 10px 0 var(--ink);transform:rotate(-1.2deg)}
 .chat-bar{background:#0B5D52;color:#fff;display:flex;align-items:center;gap:11px;padding:12px 15px;font-weight:700;font-size:15.5px;line-height:1.15}
-.chat-bar i{width:38px;height:38px;border-radius:50%;background:var(--violet) url("img/icone-destaque-se.png") 54% 50%/64% no-repeat;border:2px solid #fff;flex-shrink:0}
+.chat-bar i{width:38px;height:38px;border-radius:50%;background:var(--violet);border:2px solid #fff;flex-shrink:0;display:grid;place-items:center;font:900 18px/1 var(--disp);font-style:normal;transition:background .3s}
+.chat-tabs{display:flex;gap:10px;margin-bottom:22px;max-width:400px}
+.chat-tabs button{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:10px 8px;flex:1;white-space:nowrap;border:2px solid var(--ink);background:var(--sheet);color:var(--ink);cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .15s,background .2s,color .2s,box-shadow .2s}
+.chat-tabs button b{color:var(--violet);margin-right:5px}.chat-tabs button.on b{color:var(--yellow)}
+.chat-tabs button:hover{transform:translate(-1px,-1px)}
+.chat-tabs button.on{background:var(--ink);color:#fff;box-shadow:4px 4px 0 var(--violet)}
+.chat-tabs button:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
 .chat-bar small{display:block;font-weight:400;font-size:12px;opacity:.9}
-.chat-body{height:372px;overflow:hidden;padding:15px 13px;display:flex;flex-direction:column;gap:9px;justify-content:flex-end}
+.chat-body{height:450px;overflow:hidden;padding:15px 13px;display:flex;flex-direction:column;gap:9px;justify-content:flex-end}
 .bub{max-width:84%;padding:8px 11px 9px;font-size:14.5px;line-height:1.4;color:#111;background:#fff;border-radius:9px;border-top-left-radius:0;align-self:flex-start;box-shadow:0 1px 0 rgba(0,0,0,.14);animation:bub .32s cubic-bezier(.3,1.5,.5,1) both;transform-origin:0 100%;flex-shrink:0}
 .bub.me{background:#D9FDD3;align-self:flex-end;border-radius:9px;border-top-right-radius:0;transform-origin:100% 100%}
 .bub b{display:block;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--violet-d);margin-bottom:3px}
 @keyframes bub{from{opacity:0;transform:scale(.6)}}
+.bub time{float:right;font-size:10px;line-height:1;color:#667781;margin:8px -2px -3px 12px}
+.bub .lk{color:#027EB5;text-decoration:underline}
+.bub.pic{padding:4px;position:relative;width:80%}
+.bub.pic svg{display:block;width:100%;height:auto;border-radius:6px}
+.bub.pic span{position:absolute;left:10px;bottom:10px;font:500 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:4px 7px}
+.bub.pic time{position:absolute;right:10px;bottom:9px;margin:0;float:none;color:#160F2E;background:rgba(255,255,255,.8);padding:3px 5px;border-radius:3px}
+.bub.rvw{width:82%;padding:10px 11px 9px}
+.rvw-h{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.rvw-h i{width:22px;height:22px;border-radius:50%;background:#C9CED6}
+.rvw-h u{width:66px;height:8px;border-radius:4px;background:#D9DDE3;text-decoration:none}
+.rvw-h s{margin-left:auto;color:#F5B400;text-decoration:none;font-size:13px;letter-spacing:1px}
+.bub.rvw p{font-size:13px;line-height:1.38}
+.bub.rvw small{display:block;margin-top:6px;font:500 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#667781}
+.sysn{align-self:center;flex-shrink:0;font:500 9.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;background:var(--yellow);color:var(--ink);border:1.5px solid var(--ink);padding:5px 10px;animation:bub .32s cubic-bezier(.3,1.5,.5,1) both}
 .typing{display:flex;gap:4px;padding:13px 13px}
 .typing i{width:7px;height:7px;border-radius:50%;background:#8a8a8a;animation:ty 1s infinite}
 .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
@@ -657,12 +682,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- método D.U.A. -->
     <div class="dua">
       <div class="rv">
+        <div class="chat-tabs" id="chatTabs" role="group" aria-label="Exemplos de atendimento"><button type="button" class="on" aria-pressed="true"><b>01</b> Agendamento</button><button type="button" aria-pressed="false"><b>02</b> Orçamento</button></div>
         <div class="chat" id="chatBox">
-          <div class="chat-bar"><i></i><div>FixIA<small>online</small></div></div>
+          <div class="chat-bar"><i id="chatAv">A</i><div><span id="chatName">AssisTech</span><small>online</small></div></div>
           <div class="chat-body" id="chat"></div>
           <div class="chat-in"><span>Mensagem</span><i></i></div>
         </div>
-        <p class="demo-note">Conversa ilustrativa</p>
+        <p class="demo-note">Baseado em atendimentos reais · fachada e avaliações ilustrativas</p>
       </div>
       <div class="rv d1">
         <div class="dua-letters" id="duaL"><span data-k="D">D<small>Diagnóstico</small></span><span data-k="U">U<small>Urgência</small></span><span data-k="A">A<small>Agendamento</small></span></div>
@@ -887,9 +913,9 @@ function loadVSL(){
 function openVideo(id,vert){
   $('.modal-box').classList.toggle('vert',!!vert);
   $('#vid-iframe').src=`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
-  $('#modal').classList.add('open');document.body.style.overflow='hidden';
+  $('#modal').classList.add('open');document.body.style.overflow='hidden';if(window.igHold)igHold(true);
 }
-function closeVideo(){$('#modal').classList.remove('open');$('#vid-iframe').src='';document.body.style.overflow=''}
+function closeVideo(){$('#modal').classList.remove('open');$('#vid-iframe').src='';document.body.style.overflow='';if(window.igHold)igHold(false)}
 function closeIfBg(e){if(e.target===$('#modal'))closeVideo()}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
 
@@ -899,47 +925,73 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
   $('#depoimentos').innerHTML=vids.map(([id,v])=>`
   <div class="ig-post${v?' vert':''}" data-id="${id}">
     <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div><i class="ig-dots"></i></div>
-    <div class="ig-media"><img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+    <div class="ig-media"><img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
     <div class="ig-act"><svg class="heart"><use href="#i-heart"/></svg><svg><use href="#i-cmt"/></svg><svg><use href="#i-send"/></svg><svg><use href="#i-save"/></svg></div>
     <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
   </div>`).join('');
 })();
 
-/* ── feed: toca o vídeo visível, pausa os demais ── */
+/* ── feed: toca o vídeo visível com um único player ── */
 (function(){
-  const posts=$$('.ig-post');if(!posts.length)return;
-  const players=new Map();let soundOn=false,current=null,apiReady=false;
-  const tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
-  window.onYouTubeIframeAPIReady=function(){apiReady=true;if(current)play(current)};
-  const setMuted=(p,m)=>p.classList.toggle('muted',m);
-  function play(post){
-    if(!apiReady)return;
-    let pl=players.get(post);
-    if(!pl){
-      pl=new YT.Player(post.querySelector('.yt'),{videoId:post.dataset.id,
-        playerVars:{autoplay:0,mute:soundOn?0:1,playsinline:1,rel:0,modestbranding:1,controls:1},
-        events:{onReady:e=>{if(current!==post)return;
-            if(soundOn)e.target.unMute();else e.target.mute();e.target.playVideo();setMuted(post,!soundOn);check(post,e.target)},
-          onStateChange:e=>{if((e.data===1||e.data===3)&&current!==post){e.target.pauseVideo();return}if(e.data===1)post.classList.add('playing')}}});
-      players.set(post,pl);return;
-    }
-    if(!pl.playVideo)return;
-    if(soundOn)pl.unMute();else pl.mute();setMuted(post,!soundOn);pl.playVideo();check(post,pl);
+  const feed=document.querySelector('.ig-feed'),posts=[...document.querySelectorAll('.ig-post')];
+  if(!feed||!posts.length)return;
+  /* um único player para o feed inteiro: troca de vídeo sem recriar o iframe (começa mais rápido e mantém o som liberado) */
+  feed.style.position='relative';
+  const stage=document.createElement('div');stage.className='ig-stage';
+  stage.innerHTML='<div id="igPlayer"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button>';
+  feed.appendChild(stage);
+  const btn=stage.querySelector('.ig-sound');
+  let pl=null,ready=false,soundOn=false,current=null,loaded=null,hold=false,timer=0;
+  function place(){
+    if(!current)return;
+    const m=current.querySelector('.ig-media');let x=0,y=0,el=m;
+    while(el&&el!==feed){x+=el.offsetLeft;y+=el.offsetTop;el=el.offsetParent;if(el&&el!==feed){x+=el.clientLeft;y+=el.clientTop}}
+    stage.style.left=x+'px';stage.style.top=y+'px';stage.style.width=m.offsetWidth+'px';stage.style.height=m.offsetHeight+'px';
   }
-  function check(post,pl){setTimeout(()=>{if(current===post&&pl.getPlayerState&&pl.getPlayerState()!==1){pl.mute();setMuted(post,true);pl.playVideo()}},1200)}
-  function pause(post){const pl=players.get(post);if(pl&&pl.pauseVideo)pl.pauseVideo()}
+  function show(on){stage.classList.toggle('on',on);posts.forEach(p=>p.classList.toggle('playing',on&&p===current))}
+  function sync(){btn.style.display=soundOn?'none':''}
+  function start(){
+    if(!ready||!current||hold)return;
+    place();
+    const id=current.dataset.id;
+    if(soundOn){pl.unMute();pl.setVolume(100)}else pl.mute();
+    if(loaded===id)pl.playVideo();else{show(false);loaded=id;pl.loadVideoById(id)}
+    clearTimeout(timer);timer=setTimeout(guard,2600);
+  }
+  /* se o navegador barrar o vídeo com som, volta a tocar mudo e mostra o botão de novo */
+  function guard(){
+    if(!current||!soundOn||hold)return;
+    const s=pl.getPlayerState();
+    if(s===1)return;
+    if(s===3){timer=setTimeout(guard,1500);return}
+    soundOn=false;sync();pl.mute();pl.playVideo();
+  }
+  function stop(){clearTimeout(timer);show(false);if(ready)pl.pauseVideo()}
+  const tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  window.onYouTubeIframeAPIReady=function(){
+    loaded=posts[0].dataset.id;
+    pl=new YT.Player('igPlayer',{width:'100%',height:'100%',videoId:loaded,
+      playerVars:{autoplay:0,mute:1,playsinline:1,rel:0,modestbranding:1,controls:1},
+      events:{onReady:()=>{ready=true;start()},
+        onStateChange:e=>{
+          if(e.data===1){if(hold||!current||loaded!==current.dataset.id){pl.pauseVideo();return}show(true)}
+          else if(e.data===0){show(false);loaded=null}
+        }}});
+  };
   const ratios=new Map();
   const io=new IntersectionObserver(es=>{
     es.forEach(e=>ratios.set(e.target.closest('.ig-post'),e.intersectionRatio));
     let best=null,br=0;ratios.forEach((r,p)=>{if(r>br){br=r;best=p}});
     const next=br>=0.6?best:null;
     if(next===current)return;
-    if(current)pause(current);
-    current=next;if(current)play(current);
+    current=next;if(current)start();else stop();
   },{threshold:[0,.25,.5,.6,.75,1]});
   posts.forEach(p=>io.observe(p.querySelector('.ig-media')));
-  posts.forEach(p=>p.querySelector('.ig-sound').addEventListener('click',ev=>{ev.stopPropagation();soundOn=true;
-    const pl=players.get(p);if(pl&&pl.unMute){pl.unMute();pl.setVolume(100)}setMuted(p,false)}));
+  btn.addEventListener('click',ev=>{ev.stopPropagation();soundOn=true;sync();if(ready){pl.unMute();pl.setVolume(100);pl.playVideo()}});
+  addEventListener('resize',place);
+  if(window.ResizeObserver)new ResizeObserver(place).observe(feed);
+  /* pausa o feed enquanto o vídeo em destaque (modal) estiver aberto */
+  window.igHold=function(v){hold=v;if(v)stop();else if(current)start()};
 })();
 
 /* ── reveal ── */
@@ -1008,35 +1060,106 @@ let tick=false;
 addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(()=>{onScroll();tick=false})}},{passive:true});
 onScroll();
 
-/* ── conversa demonstrativa (Método D.U.A.) ── */
+/* ── conversas demonstrativas (Método D.U.A.) ── */
 (function(){
-  const box=$('#chat'),letters=$$('#duaL span');
-  const script=[
-    ['u','Oi, vocês trocam tela de iPhone 11? Quanto fica?'],
-    ['b','Oi! Trocamos sim. Me conta: a tela trincou ou parou de responder ao toque?','D','Diagnóstico'],
-    ['u','Trincou e o toque tá falhando'],
-    ['b','Entendi. Quando o toque começa a falhar, costuma piorar rápido. Você usa o aparelho para trabalhar?','U','Urgência'],
-    ['u','Uso sim, preciso dele hoje'],
-    ['b','Então vamos resolver hoje. Tenho horário às 14h ou às 16h30. Qual fica melhor?','A','Agendamento'],
-    ['u','14h'],
-    ['b','Agendado ✅ Te espero às 14h.']
+  const box=$('#chat'),letters=$$('#duaL span'),tabs=$$('#chatTabs button'),nm=$('#chatName'),av=$('#chatAv');
+  const lk=t=>`<span class="lk">${t}</span>`;
+  const sims=[
+    {nome:'AssisTech',cor:'#1F6FEB',tx:'#fff',rua:0,msgs:[
+      ['u','Boa tarde','13:16'],
+      ['b','Boa tarde, tudo bem?','13:16'],
+      ['b','Qual o modelo do seu celular, tablet, notebook ou vídeo game?','13:16','D','Diagnóstico'],
+      ['u','Galaxy s21','13:17'],
+      ['b','O que aconteceu com o Galaxy S21?','13:18'],
+      ['u','Começou a aparecer algumas listras verdes na tela','13:19'],
+      ['b','Entendi! A tela está funcionando normal? Tem alguma linha, mancha, parte escura ou falha no toque?','13:20'],
+      ['u','Está funcionando perfeitamente, apenas apareceu uma listra e foi aumentando, agora tem umas 5 listras','13:21'],
+      ['b','As listras ficam visíveis o tempo todo ou desaparecem em algum momento?','13:21'],
+      ['u','Ficam visíveis o tempo todo quando a tela está desbloqueada','13:23'],
+      ['b','Como as listras estão aumentando, é importante avaliar logo para evitar que o problema avance e gere um custo maior.','13:23','U','Urgência'],
+      ['b','E se você pudesse ter um diagnóstico gratuito, feito por um técnico experiente e uma loja confiável, faria sentido pra você?','13:24'],
+      ['u','Faria sim','13:24'],
+      ['b','Perfeito! Temos uma loja dentro do Bourbon Canoas e outra em Porto Alegre.','13:24'],
+      ['b','Qual fica mais perto de você?','13:24'],
+      ['u','A de Canoas, moro próximo ao bourbon','13:25'],
+      ['b','Perfeito! Tenho 11/11 às 14:30 ou 11/11 às 15:30. Qual fica melhor?','13:25','A','Agendamento'],
+      ['b','🏬 Estamos localizados na Av. Getúlio Vargas, 5765, Vila Rosa, Canoas, dentro do Bourbon Canoas, loja 19, ao lado da Lupo e do Espaço laser.','13:26'],
+      ['b','📍 Link para o GPS: '+lk('maps.app.goo.gl/…'),'13:26'],
+      ['f','','13:26'],
+      ['u','Hoje eu só conseguiria umas 16:30','13:29'],
+      ['b','16:30 está disponível hoje. Como é o seu nome pra eu reservar a vaga?','13:30'],
+      ['u','Alexandre','13:31'],
+      ['s','CRM · Movido para a etapa Agendado'],
+      ['b','Perfeito, Alexandre! Seu atendimento ficou agendado para 11/11 às 16:30, na nossa unidade do Bourbon Canoas. A gente vai te lembrar antes, tá bom? Qualquer coisa, é só chamar por aqui 💙','13:32'],
+      ['b','Enquanto isso, dá uma olhadinha no que nossos clientes acham do nosso trabalho:','13:32'],
+      ['r','Minha tela estava com listras e resolveram no mesmo dia. Diagnóstico feito na hora.'],
+      ['r','Troquei a tela do meu Galaxy aqui. Atendimento rápido e o valor foi o combinado.'],
+      ['r','Explicaram o problema da tela sem enrolação e entregaram no prazo. Recomendo.'],
+      ['b','E já sabe: deu problema no celular? Vem pra AssisTech😉','13:33']
+    ]},
+    {nome:'Senhor Smart',cor:'#FFC72C',tx:'#160F2E',rua:1,msgs:[
+      ['u','Olá, vim do site e gostaria de ser atendido!','09:18'],
+      ['b','Olá! 👋 Seja bem-vindo(a) à Senhor Smart! 💛<br>Sou a Luna e vou te ajudar com seu atendimento.','09:19'],
+      ['b','Para começarmos, me conta: qual é o modelo do seu aparelho e qual serviço ele precisa? 😊','09:19','D','Diagnóstico'],
+      ['u','iPhone 15','09:19'],
+      ['u','Bateria não carrega mais','09:20'],
+      ['b','Poxa, sinto muito que isso aconteceu! Fica tranquilo que aqui a gente resolve de forma bem rápida pra você 😊 Qual é o seu nome?','09:20'],
+      ['u','Preciso emergência Troca rapida onde vcs ficam','09:20'],
+      ['u','Landes','09:20'],
+      ['b','Landes, estamos na R. Barão de Jundiaí, 159, Lapa, São Paulo, em frente à rua 12 de Outubro. Estamos abertos agora até 17:30.<br>📍 '+lk('share.google/…'),'09:21'],
+      ['f','','09:21'],
+      ['b','Antes da troca, me conta: parou de carregar depois de queda ou contato com líquido? As demais funções estão normais?','09:21'],
+      ['u','Qual valor da beteria ?','09:21'],
+      ['b','Landes, consigo consultar o valor certinho. Antes, me confirma: isso aconteceu depois de queda ou contato com líquido? E as demais funções do iPhone estão normais?','09:22'],
+      ['u','Acho Que é de tempo de uso não houve queda','09:23'],
+      ['b','E as demais funções do iPhone estão normais, Landes? Em especial, ele liga e funciona normalmente fora o carregamento?','09:23'],
+      ['b','Landes, quer que eu já te passe o orçamento da troca de bateria do seu iPhone 15? 😊','09:33'],
+      ['u','Sim','09:34'],
+      ['b','Para realizar a troca de bateria do seu iPhone 15, o investimento fica:<br>💳 5x sem juros de R$ 79,80<br>⏰ Serviço em 1h com agendamento<br>✅ Garantia de 6 meses<br>🔒 Reparo seguro, preservando os dados do aparelho<br>Nossos técnicos são especializados, para atender com o cuidado que seu iPhone 15 merece.<br>Vc prefere o atendimento em loja ou via delivery?','09:35','','Orçamento'],
+      ['u','Passo ai na loja mais tarde','09:35'],
+      ['b','Landes, temos horário livre hoje, terça, 10/11, das 12:00 às 15:30. Qual horário fica melhor pra você? Quer que eu já deixe reservado para ser atendido sem espera? 😊','09:36','A','Agendamento'],
+      ['u','12:00h','09:37'],
+      ['s','CRM · Movido para a etapa Agendado'],
+      ['b','Perfeito, Landes! Seu atendimento ficou agendado para 10/11, terça, às 12:00. Nossa unidade fica na R. Barão de Jundiaí, 159, Lapa, São Paulo, em frente à rua 12 de Outubro.<br>📍 '+lk('share.google/…'),'09:37'],
+      ['b','Para sua maior comodidade temos estacionamento conveniado, a primeira hora é por nossa conta, fica na Rua Domingos Rodrigues 655 - Lapa','09:37'],
+      ['s','Lembrete antes do horário'],
+      ['b','Olá! Landes 😊 Passando para lembrar do seu horário terça, 10/11 às 12:00. Já estamos com tudo preparado pra te receber. Me confirma pra gente garantir a vaga, tá bom? Obrigado e ficamos à disposição.','']
+    ]}
   ];
-  const wait=ms=>new Promise(r=>setTimeout(r,ms));
-  const add=h=>{const d=document.createElement('div');d.innerHTML=h;const el=d.firstChild;box.appendChild(el);while(box.children.length>7)box.firstChild.remove();return el};
+  const phones=xs=>xs.map((x,i)=>[92,126].map((y,j)=>`<rect x="${x}" y="${y}" width="12" height="19" rx="2" fill="${(i+j)%2?'#7445F2':'#160F2E'}"/>`).join('')).join('');
+  const fach=s=>`<svg viewBox="0 0 320 196" role="img" aria-label="Ilustração da fachada da loja ${s.nome}"><rect width="320" height="196" fill="${s.rua?'#CFE4EE':'#EFE7DA'}"/>${s.rua?'<path d="M0 150h320v46H0z" fill="#AEB6BF"/><path d="M0 180h320" stroke="#fff" stroke-width="2" stroke-dasharray="14 12" opacity=".7"/>':'<rect width="320" height="13" fill="#DDD3C2"/><circle cx="60" cy="6.5" r="3" fill="#fff"/><circle cx="160" cy="6.5" r="3" fill="#fff"/><circle cx="260" cy="6.5" r="3" fill="#fff"/><path d="M0 164h320v32H0z" fill="#DCD0BB"/>'}<rect x="22" y="24" width="276" height="46" fill="${s.cor}" stroke="#160F2E" stroke-width="3"/><text x="160" y="56" text-anchor="middle" font-family="Bitter,Georgia,serif" font-weight="900" font-size="25" fill="${s.tx}">${s.nome}</text><rect x="22" y="70" width="276" height="94" fill="#E4F0F5" stroke="#160F2E" stroke-width="3"/><rect x="130" y="84" width="60" height="80" fill="#F8FCFE" stroke="#160F2E" stroke-width="3"/><path d="M160 84v80" stroke="#160F2E" stroke-width="2"/><path d="M152 124h-5M168 124h5" stroke="#160F2E" stroke-width="3" stroke-linecap="round"/><path d="M34 113h84M34 147h84M202 113h84M202 147h84" stroke="#160F2E" stroke-width="2.5"/>${phones([42,64,86,210,232,254])}</svg>`;
+  const tm=t=>t?`<time>${t}</time>`:'';
+  const html=(m,s)=>{const [w,txt,t,k,name]=m;
+    if(w==='u')return `<div class="bub me">${txt}${tm(t)}</div>`;
+    if(w==='s')return `<div class="sysn">${txt}</div>`;
+    if(w==='f')return `<div class="bub pic">${fach(s)}<span>Foto da fachada</span>${tm(t)}</div>`;
+    if(w==='r')return `<div class="bub rvw"><div class="rvw-h"><i></i><u></u><s>★★★★★</s></div><p>${txt}</p><small>Avaliação no Google</small></div>`;
+    return `<div class="bub">${name?`<b>${k?k+' · ':''}${name}</b>`:''}${txt}${tm(t)}</div>`};
+  const add=h=>{const d=document.createElement('div');d.innerHTML=h;const el=d.firstChild;box.appendChild(el);while(box.children.length>12)box.firstChild.remove();return el};
   const mark=k=>letters.forEach(l=>l.classList.toggle('on',l.dataset.k===k));
-  async function run(){
-    for(;;){
-      box.innerHTML='';mark('');
-      for(const [who,txt,k,name] of script){
-        if(who==='u'){await wait(1000);add(`<div class="bub me">${txt}</div>`)}
-        else{await wait(650);const t=add('<div class="bub typing"><i></i><i></i><i></i></div>');await wait(1350);t.remove();
-          if(k)mark(k);add(`<div class="bub">${k?`<b>${k} · ${name}</b>`:''}${txt}</div>`)}
+  const head=i=>{const s=sims[i];tabs.forEach((b,n)=>{b.classList.toggle('on',n===i);b.setAttribute('aria-pressed',n===i)});nm.textContent=s.nome;av.textContent=s.nome[0];av.style.background=s.cor;av.style.color=s.tx};
+  let rid=0;
+  const wait=(ms,id)=>new Promise((ok,no)=>setTimeout(()=>id===rid?ok():no(),ms));
+  async function play(i){
+    const id=++rid,s=sims[i];head(i);box.innerHTML='';mark('');
+    try{
+      let prev='';
+      for(const m of s.msgs){
+        const w=m[0];
+        if(w==='u')await wait(prev==='u'?650:950,id);
+        else if(w==='s')await wait(550,id);
+        else{await wait(prev==='u'?480:220,id);const t=add('<div class="bub typing"><i></i><i></i><i></i></div>');await wait(w==='b'?Math.min(1250,480+m[1].length*6):620,id);t.remove()}
+        if(m[3])mark(m[3]);
+        add(html(m,s));prev=w;
       }
-      await wait(5200);
-    }
+      await wait(5200,id);play((i+1)%sims.length);
+    }catch(e){}
   }
-  if(reduce){box.innerHTML=script.slice(-6).map(([w,t])=>`<div class="bub${w==='u'?' me':''}" style="animation:none">${t}</div>`).join('');return}
-  const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){o.disconnect();run()}},{threshold:.35});
+  function still(i){rid++;head(i);const s=sims[i];box.innerHTML=s.msgs.slice(-7).map(m=>html(m,s)).join('');$$('.bub,.sysn',box).forEach(e=>e.style.animation='none');mark('A')}
+  let started=false;
+  tabs.forEach((b,i)=>b.addEventListener('click',()=>{started=true;reduce?still(i):play(i)}));
+  if(reduce){still(0);return}
+  const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){o.disconnect();if(!started){started=true;play(0)}}},{threshold:.35});
   o.observe($('#chatBox'));
 })();
 </script>

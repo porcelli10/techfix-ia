@@ -24,6 +24,9 @@ fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=993466089760745&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel -->
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="preconnect" href="https://img.youtube.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -222,8 +225,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;b
 .ig-media img,.ig-media iframe,.ig-media .yt{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
 .ig-media img{transition:opacity .4s}
 .ig-post.playing .ig-media img{opacity:0;pointer-events:none}
-.ig-sound{position:absolute;inset:0;z-index:3;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.28);border:0;cursor:pointer;padding:16px}
-.ig-post.playing.muted .ig-sound{display:flex}
+.ig-sound{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.28);border:0;cursor:pointer;padding:16px}
+.ig-stage{position:absolute;z-index:5;background:#000;opacity:0;pointer-events:none;transition:opacity .25s}
+.ig-stage.on{opacity:1;pointer-events:auto}
+.ig-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .ig-sound span{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#111;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;padding:16px 26px;border-radius:999px;box-shadow:0 10px 40px rgba(0,0,0,.55);animation:snd 1.3s ease-in-out infinite}
 @keyframes snd{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
 .ig-cap{padding:12px 14px 16px;font-size:14px;color:var(--text-silver)}
@@ -434,52 +439,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="ig-feed" id="depoimentos" style="scroll-margin-top:90px">
       <div class="ig-post vert" data-id="Q769b9Jm-Ps">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/Q769b9Jm-Ps/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/Q769b9Jm-Ps/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post vert" data-id="-rvi_zuDZ-Q">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/-rvi_zuDZ-Q/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/-rvi_zuDZ-Q/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="LP1xRcs2s3Q">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/LP1xRcs2s3Q/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/LP1xRcs2s3Q/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="TAavdNlb5x4">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/TAavdNlb5x4/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/TAavdNlb5x4/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post vert" data-id="wYihS8gvx9M">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/wYihS8gvx9M/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/wYihS8gvx9M/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="01rgeUQbPqc">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/01rgeUQbPqc/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/01rgeUQbPqc/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="zhHo-P__hVc">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/zhHo-P__hVc/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/zhHo-P__hVc/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post vert" data-id="WvQE916Knds">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/WvQE916Knds/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/WvQE916Knds/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="W-DL16HZWdQ">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/W-DL16HZWdQ/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/W-DL16HZWdQ/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
       <div class="ig-post" data-id="cX_HmZVfaqI">
         <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div></div>
-        <div class="ig-media"><img src="https://img.youtube.com/vi/cX_HmZVfaqI/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+        <div class="ig-media"><img src="https://img.youtube.com/vi/cX_HmZVfaqI/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"></div>
         <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
       </div>
     </div>
@@ -862,51 +867,79 @@ function openVideo(id,vert){
   document.getElementById('vid-iframe').src=`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
+  if(window.igHold)igHold(true);
 }
 function closeVideo(){
   document.getElementById('modal').classList.remove('open');
   document.getElementById('vid-iframe').src='';
   document.body.style.overflow='';
+  if(window.igHold)igHold(false);
 }
 function closeIfBg(e){if(e.target===document.getElementById('modal'))closeVideo()}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
-// Feed de depoimentos: autoplay do vídeo visível, pausa os demais
+// Feed de depoimentos: toca o vídeo visível com um único player
 (function(){
-  const posts=[...document.querySelectorAll('.ig-post')];
-  if(!posts.length)return;
-  const players=new Map();let soundOn=false,current=null,apiReady=false;
-  const tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
-  window.onYouTubeIframeAPIReady=function(){apiReady=true;if(current)play(current)};
-  function setMuted(post,m){post.classList.toggle('muted',m)}
-  function play(post){
-    if(!apiReady)return;
-    let pl=players.get(post);
-    if(!pl){
-      pl=new YT.Player(post.querySelector('.yt'),{videoId:post.dataset.id,
-        playerVars:{autoplay:0,mute:soundOn?0:1,playsinline:1,rel:0,modestbranding:1,controls:1},
-        events:{onReady:e=>{if(current!==post)return;
-            if(soundOn)e.target.unMute();else e.target.mute();e.target.playVideo();setMuted(post,!soundOn);check(post,e.target)},
-          onStateChange:e=>{if((e.data===1||e.data===3)&&current!==post){e.target.pauseVideo();return}if(e.data===1)post.classList.add('playing')}}});
-      players.set(post,pl);return;
-    }
-    if(!pl.playVideo)return;
-    if(soundOn)pl.unMute();else pl.mute();setMuted(post,!soundOn);pl.playVideo();check(post,pl);
+  const feed=document.querySelector('.ig-feed'),posts=[...document.querySelectorAll('.ig-post')];
+  if(!feed||!posts.length)return;
+  /* um único player para o feed inteiro: troca de vídeo sem recriar o iframe (começa mais rápido e mantém o som liberado) */
+  feed.style.position='relative';
+  const stage=document.createElement('div');stage.className='ig-stage';
+  stage.innerHTML='<div id="igPlayer"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button>';
+  feed.appendChild(stage);
+  const btn=stage.querySelector('.ig-sound');
+  let pl=null,ready=false,soundOn=false,current=null,loaded=null,hold=false,timer=0;
+  function place(){
+    if(!current)return;
+    const m=current.querySelector('.ig-media');let x=0,y=0,el=m;
+    while(el&&el!==feed){x+=el.offsetLeft;y+=el.offsetTop;el=el.offsetParent;if(el&&el!==feed){x+=el.clientLeft;y+=el.clientTop}}
+    stage.style.left=x+'px';stage.style.top=y+'px';stage.style.width=m.offsetWidth+'px';stage.style.height=m.offsetHeight+'px';
   }
-  function check(post,pl){setTimeout(()=>{if(current===post&&pl.getPlayerState&&pl.getPlayerState()!==1){pl.mute();setMuted(post,true);pl.playVideo()}},1200)}
-  function pause(post){const pl=players.get(post);if(pl&&pl.pauseVideo)pl.pauseVideo()}
+  function show(on){stage.classList.toggle('on',on);posts.forEach(p=>p.classList.toggle('playing',on&&p===current))}
+  function sync(){btn.style.display=soundOn?'none':''}
+  function start(){
+    if(!ready||!current||hold)return;
+    place();
+    const id=current.dataset.id;
+    if(soundOn){pl.unMute();pl.setVolume(100)}else pl.mute();
+    if(loaded===id)pl.playVideo();else{show(false);loaded=id;pl.loadVideoById(id)}
+    clearTimeout(timer);timer=setTimeout(guard,2600);
+  }
+  /* se o navegador barrar o vídeo com som, volta a tocar mudo e mostra o botão de novo */
+  function guard(){
+    if(!current||!soundOn||hold)return;
+    const s=pl.getPlayerState();
+    if(s===1)return;
+    if(s===3){timer=setTimeout(guard,1500);return}
+    soundOn=false;sync();pl.mute();pl.playVideo();
+  }
+  function stop(){clearTimeout(timer);show(false);if(ready)pl.pauseVideo()}
+  const tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  window.onYouTubeIframeAPIReady=function(){
+    loaded=posts[0].dataset.id;
+    pl=new YT.Player('igPlayer',{width:'100%',height:'100%',videoId:loaded,
+      playerVars:{autoplay:0,mute:1,playsinline:1,rel:0,modestbranding:1,controls:1},
+      events:{onReady:()=>{ready=true;start()},
+        onStateChange:e=>{
+          if(e.data===1){if(hold||!current||loaded!==current.dataset.id){pl.pauseVideo();return}show(true)}
+          else if(e.data===0){show(false);loaded=null}
+        }}});
+  };
   const ratios=new Map();
   const io=new IntersectionObserver(es=>{
     es.forEach(e=>ratios.set(e.target.closest('.ig-post'),e.intersectionRatio));
     let best=null,br=0;ratios.forEach((r,p)=>{if(r>br){br=r;best=p}});
     const next=br>=0.6?best:null;
     if(next===current)return;
-    if(current)pause(current);
-    current=next;if(current)play(current);
+    current=next;if(current)start();else stop();
   },{threshold:[0,.25,.5,.6,.75,1]});
-  posts.forEach(p=>{io.observe(p.querySelector('.ig-media'));});
-  posts.forEach(p=>p.querySelector('.ig-sound').addEventListener('click',ev=>{ev.stopPropagation();soundOn=true;
-    const pl=players.get(p);if(pl&&pl.unMute){pl.unMute();pl.setVolume(100)}setMuted(p,false)}));
+  posts.forEach(p=>io.observe(p.querySelector('.ig-media')));
+  btn.addEventListener('click',ev=>{ev.stopPropagation();soundOn=true;sync();if(ready){pl.unMute();pl.setVolume(100);pl.playVideo()}});
+  addEventListener('resize',place);
+  if(window.ResizeObserver)new ResizeObserver(place).observe(feed);
+  /* pausa o feed enquanto o vídeo em destaque (modal) estiver aberto */
+  window.igHold=function(v){hold=v;if(v)stop();else if(current)start()};
 })();
+
 </script>
 </body>
 </html>
