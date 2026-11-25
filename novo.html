@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W8GDC9P2');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Estruture o comercial da sua assistência técnica com inteligência artificial, CRM, atendimento, follow-up e gestão. Transforme conversas em mais oportunidades de vendas.">
+<title>FixIA | Estrutura Comercial com IA para Assistências Técnicas</title>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','993466089760745');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=993466089760745&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,700;0,900;1,700&family=Caveat:wght@700&family=DM+Mono:wght@400;500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#F4EFE4;--paper2:#EAE3D2;--sheet:#FFFDF8;
+  --ink:#160F2E;--ink2:#241A45;
+  --violet:#7445F2;--violet-d:#4B26B8;--lilac:#DCD0FF;
+  --yellow:#FFD84A;--green:#1DAA57;--green-d:#128043;--red:#E24B2D;
+  --line:rgba(22,15,46,.16);--mute:#5B5470;
+  --disp:'Bitter',Georgia,serif;--body:'Hanken Grotesk',system-ui,sans-serif;--mono:'DM Mono',ui-monospace,monospace;--hand:'Caveat',cursive;
+}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:900;opacity:.07;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+::selection{background:var(--violet);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--disp);font-weight:900;line-height:1.08;letter-spacing:-.015em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.sec{padding:110px 0;position:relative}
+.sec-ink{background:var(--ink);color:#fff}
+.sec-p2{background:var(--paper2)}
+.rule{border-top:2px solid var(--ink)}
+
+/* progress */
+.prog{position:fixed;top:0;left:0;height:5px;width:100%;background:var(--yellow);transform-origin:0 50%;transform:scaleX(0);z-index:950}
+
+/* label */
+.lbl{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
+.lbl i{width:8px;height:8px;background:var(--violet);box-shadow:8px -8px 0 var(--violet),16px 0 0 var(--violet-d);margin-right:16px;flex-shrink:0}
+.sec-ink .lbl i,.hero .lbl i,.cta .lbl i{background:var(--yellow);box-shadow:8px -8px 0 var(--yellow),16px 0 0 var(--lilac)}
+
+/* titles */
+.h2{font-size:clamp(30px,4.2vw,54px);margin-bottom:20px;max-width:18ch}
+.h2.wide{max-width:22ch}
+.h2 em,.closing em{font-style:italic;font-weight:700;background:linear-gradient(transparent 58%,var(--yellow) 58%,var(--yellow) 94%,transparent 94%) no-repeat 0 0/0% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .9s cubic-bezier(.2,.7,.2,1) .25s;padding:0 .08em;margin:0 -.08em}
+.in .h2 em,.h2.in em,.in.closing em{background-size:100% 100%}
+.sec-ink .h2 em,.cta .h2 em{background:none;color:var(--yellow)}
+.sub{font-size:18px;color:var(--mute);max-width:54ch}
+.sec-ink .sub{color:#C9C0E6}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:700;font-size:17px;line-height:1.2;padding:17px 28px;border:2.5px solid var(--ink);background:var(--sheet);color:var(--ink);box-shadow:6px 6px 0 var(--ink);transition:transform .12s ease,box-shadow .12s ease;cursor:pointer}
+.btn:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+.btn:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--ink)}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa svg{width:22px;height:22px;flex-shrink:0}
+.btn-lg{font-size:19px;padding:20px 36px}
+.on-dark .btn,.hero .btn,.cta .btn{border-color:#fff;box-shadow:6px 6px 0 #fff}
+.hero .btn:hover,.cta .btn:hover{box-shadow:3px 3px 0 #fff}
+.hero .btn:active,.cta .btn:active{box-shadow:0 0 0 #fff}
+.btn-ghost{background:var(--ink);color:#fff}
+.btn-ghost svg{width:18px;height:18px;transition:transform .2s}
+.btn-ghost:hover svg{transform:translateY(3px)}
+
+/* pixel field */
+.px{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.px i{position:absolute;opacity:var(--o);animation:pxb 5s steps(4) infinite}
+@keyframes pxb{0%,100%{opacity:var(--o)}50%{opacity:calc(var(--o)*.12)}}
+
+/* ═══ HERO ═══ */
+.hero{position:relative;background:var(--ink);color:#fff;padding:26px 0 84px;overflow:hidden}
+.hero .wrap{position:relative;z-index:2}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:46px}
+.brand{font-family:var(--disp);font-weight:900;font-size:26px;display:flex;align-items:center;gap:12px;letter-spacing:-.02em}
+.brand b{color:var(--yellow)}
+.brand-px{width:10px;height:10px;background:var(--violet);box-shadow:10px 10px 0 var(--violet),0 20px 0 var(--violet),-10px 10px 0 var(--lilac);margin:0 10px 20px 10px}
+.by{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#B9AEDD}
+.by img{height:30px;width:auto}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);grid-template-areas:"copy video" "cta video";column-gap:64px;align-items:start}
+.hero-copy{grid-area:copy}
+.hero-video{grid-area:video;position:relative;margin-top:14px}
+.hero-cta{grid-area:cta;margin-top:28px}
+.hero h1{font-size:clamp(31px,3.5vw,50px);margin-bottom:0}
+.hero h1 mark{position:relative;z-index:0;background:none;color:#fff;display:inline-block;white-space:nowrap;padding:0 .14em;margin:0 -.06em;transform:rotate(-1.4deg);transition:color .3s ease .75s}
+.hero h1 mark::before{content:'';position:absolute;inset:.06em 0 .02em;background:var(--yellow);z-index:-1;transform:scaleX(0);transform-origin:0 50%;transition:transform .65s cubic-bezier(.6,0,.2,1) .6s}
+.loaded .hero h1 mark{color:var(--ink)}
+.loaded .hero h1 mark::before{transform:scaleX(1)}
+.hero-sub{font-size:18px;color:#CFC7EA;max-width:50ch;margin-bottom:30px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:18px}
+.ld{opacity:0;transform:translateY(22px);transition:opacity .7s ease var(--d,0s),transform .8s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.loaded .ld{opacity:1;transform:none}
+.frame{position:relative;background:#000;border:3px solid #fff;box-shadow:12px 12px 0 var(--violet);aspect-ratio:16/9;transform:rotate(1.6deg);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s;cursor:pointer}
+.frame:hover,.frame.playing{transform:rotate(0)}
+.frame.playing{box-shadow:12px 12px 0 var(--yellow)}
+.frame img,.frame iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.frame-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(22,15,46,.28);transition:background .3s}
+.frame:hover .frame-ov{background:rgba(22,15,46,.12)}
+.playbtn{width:92px;height:92px;background:var(--yellow);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);display:flex;align-items:center;justify-content:center;animation:nudge 2.4s ease-in-out infinite}
+.playbtn svg{width:34px;height:34px;margin-left:5px;color:var(--ink)}
+@keyframes nudge{0%,100%{transform:translate(0,0)}50%{transform:translate(-3px,-3px)}}
+.tape{position:absolute;z-index:3;width:120px;height:32px;background:var(--yellow);opacity:.93;top:-17px;left:50%;margin-left:-60px;transform:rotate(-3deg);clip-path:polygon(0 0,4% 18%,0 36%,4% 54%,0 72%,4% 100%,96% 100%,100% 82%,96% 64%,100% 46%,96% 28%,100% 0)}
+.note{position:absolute;right:6px;bottom:-58px;font-family:var(--hand);font-size:27px;line-height:1;color:var(--yellow);display:flex;align-items:flex-start;gap:8px;transform:rotate(-3deg)}
+.note svg{width:46px;height:40px;margin-top:-22px}
+.note path{stroke-dasharray:120;stroke-dashoffset:120;transition:stroke-dashoffset .9s ease 1.5s}
+.loaded .note path{stroke-dashoffset:0}
+
+/* ticker */
+.ticker{background:var(--violet);color:#fff;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;animation:tick 26s linear infinite}
+.ticker span{display:inline-flex;align-items:center;font-family:var(--disp);font-weight:700;font-style:italic;font-size:21px;padding:15px 0}
+.ticker span::after{content:'';width:12px;height:12px;background:var(--yellow);margin:0 30px;box-shadow:12px -12px 0 var(--ink)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ═══ RESULTADOS ═══ */
+.res-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,470px);gap:72px;align-items:start}
+.res-side{position:sticky;top:90px}
+.res-side .btn{margin-top:34px}
+.hint{font-family:var(--hand);font-size:26px;color:var(--violet-d);margin-top:28px;display:flex;align-items:center;gap:10px;transform:rotate(-2deg);transform-origin:0 50%}
+.hint svg{width:54px;height:30px}
+.ig-feed{display:flex;flex-direction:column;gap:34px}
+.ig-post{background:#fff;border:2.5px solid var(--ink);box-shadow:8px 8px 0 var(--ink);color:#111}
+.ig-post:nth-child(odd){box-shadow:8px 8px 0 var(--violet)}
+.ig-head{display:flex;align-items:center;gap:10px;padding:11px 14px;font-size:14px;font-weight:700;line-height:1.25}
+.ig-head small{display:block;font-size:12px;font-weight:400;color:#737373}
+.ig-dots{margin-left:auto;width:4px;height:4px;border-radius:50%;background:#111;box-shadow:-7px 0 0 #111,7px 0 0 #111;margin-right:9px}
+.vid-av{width:38px;height:38px;border-radius:50%;padding:2px;background:conic-gradient(#F58529,#DD2A7B,#8134AF,#515BD4,#F58529);flex-shrink:0}
+.vid-av span{display:block;width:100%;height:100%;border-radius:50%;background:var(--ink) url("img/icone-destaque-se.png") 54% 50%/66% no-repeat;border:2px solid #fff}
+.ig-media{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+.ig-post.vert .ig-media{aspect-ratio:9/16;max-height:82vh}
+.ig-media img,.ig-media iframe,.ig-media .yt{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.ig-media img{transition:opacity .4s}
+.ig-post.playing .ig-media img{opacity:0;pointer-events:none}
+.ig-sound{position:absolute;inset:0;z-index:3;display:none;align-items:center;justify-content:center;background:rgba(22,15,46,.3);border:0;cursor:pointer;padding:16px}
+.ig-post.playing.muted .ig-sound{display:flex}
+.ig-sound span{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--ink);border:2.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);font:700 19px var(--body);padding:15px 24px;animation:snd 1.2s ease-in-out infinite}
+@keyframes snd{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.08) rotate(-2deg)}}
+.ig-act{display:flex;align-items:center;gap:15px;padding:11px 14px 2px}
+.ig-act svg{width:24px;height:24px;fill:none;stroke:#111;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ig-act svg:last-child{margin-left:auto}
+.ig-post.playing .ig-act .heart{fill:#ED4956;stroke:#ED4956;animation:pop .45s cubic-bezier(.3,1.8,.5,1)}
+@keyframes pop{0%{transform:scale(.5)}100%{transform:scale(1)}}
+.ig-cap{padding:6px 14px 15px;font-size:14px;color:#262626}
+.res-bottom{display:none;margin-top:44px}
+
+/* ═══ PROBLEMAS ═══ */
+.prob-head{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end;margin-bottom:64px}
+.tickets{display:grid;grid-template-columns:repeat(2,1fr);gap:34px 38px}
+.ticket{position:relative;background:var(--sheet);border:2.5px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:40px 34px 34px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,opacity .7s}
+.ticket::before{content:'';position:absolute;left:0;right:0;top:0;height:14px;background:radial-gradient(circle at 9px 0,var(--paper2) 6px,transparent 6.5px) 0 0/18px 14px repeat-x}
+.ticket:nth-child(1).in{transform:rotate(-1.3deg)}.ticket:nth-child(2).in{transform:rotate(1deg)}
+.ticket:nth-child(3).in{transform:rotate(.8deg)}.ticket:nth-child(4).in{transform:rotate(-1deg)}
+.ticket.in:hover{transform:rotate(0) translate(-3px,-3px);box-shadow:11px 11px 0 var(--red)}
+.t-num{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--mute);display:block;margin-bottom:14px}
+.ticket h3{font-size:25px;margin-bottom:10px;padding-right:64px}
+.ticket p{color:var(--mute);font-size:16.5px}
+.t-x{position:absolute;top:28px;right:24px;width:54px;height:54px;stroke:var(--red);stroke-width:7;fill:none;stroke-linecap:round;stroke-dasharray:70;stroke-dashoffset:70;transition:stroke-dashoffset .55s ease .55s;transform:rotate(-4deg)}
+.ticket.in .t-x{stroke-dashoffset:0}
+.closing{font-family:var(--disp);font-weight:700;font-size:clamp(23px,2.9vw,36px);line-height:1.3;max-width:26ch;margin-top:74px;padding-left:28px;border-left:10px solid var(--violet)}
+
+/* ═══ DESTAQUE ═══ */
+.feat{display:grid;grid-template-columns:1.12fr .88fr;gap:70px;align-items:center}
+.polaroid{position:relative;background:#fff;border:2.5px solid var(--ink);padding:14px 14px 0;box-shadow:10px 10px 0 var(--violet);transform:rotate(-2.2deg);cursor:pointer;transition:transform .4s cubic-bezier(.2,.7,.2,1),opacity .7s}
+.polaroid.in{transform:rotate(-2.2deg)}
+.polaroid.in:hover{transform:rotate(0) scale(1.015)}
+.pol-img{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000}
+.pol-img img{width:100%;height:100%;object-fit:cover}
+.pol-img .playbtn{position:absolute;left:50%;top:50%;margin:-40px 0 0 -40px;width:80px;height:80px}
+.pol-cap{font-family:var(--hand);font-size:31px;line-height:1;padding:15px 6px 17px;color:var(--ink)}
+.feat-name{font-family:var(--disp);font-weight:900;font-size:clamp(40px,5vw,66px);line-height:1}
+.feat-role{font-family:var(--mono);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet-d);margin:10px 0 22px}
+
+/* ═══ SOLUÇÃO + VISTA EXPLODIDA ═══ */
+.sol-head{margin-bottom:10px}
+.xr{position:relative;height:400vh}
+.xr-pin{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:40px;align-items:center;overflow:hidden}
+.xr-list{display:flex;flex-direction:column;position:relative;z-index:2}
+.xr-item{display:grid;grid-template-columns:54px 1fr;gap:6px 14px;padding:15px 0;border-top:1.5px solid var(--line);opacity:.34;transition:opacity .35s,transform .35s}
+.xr-item:last-child{border-bottom:1.5px solid var(--line)}
+.xr-item.on{opacity:1;transform:translateX(10px)}
+.xr.idle .xr-item{opacity:1}
+.xr-n{font-family:var(--mono);font-size:13px;letter-spacing:.1em;color:var(--mute);padding-top:5px;grid-row:span 2}
+.xr-item.on .xr-n{color:var(--violet-d)}
+.xr-n b{display:block;font-weight:500;font-size:10.5px;letter-spacing:.12em;color:inherit;opacity:0;transition:opacity .3s}
+.xr-item.on .xr-n b{opacity:1}
+.xr-item h3{font-size:21px;line-height:1.2}
+.xr-item p{font-size:15.5px;color:var(--mute);line-height:1.5;grid-column:2}
+.xr-stage{position:relative;height:100%;display:flex;align-items:center;justify-content:center;perspective:1700px}
+.xr-stage::before{content:'';position:absolute;inset:8% 4%;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:34px 34px;opacity:.55;-webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent);mask-image:radial-gradient(closest-side,#000 40%,transparent)}
+.ph3{--t:0;--e:0;--s:1;position:relative;width:260px;height:530px;transform-style:preserve-3d;transform:scale(var(--s)) translateY(calc(var(--e)*185px)) rotateX(calc(var(--t)*60deg)) rotateZ(calc(var(--t)*-40deg))}
+.pt{position:absolute;transform-style:preserve-3d;transform:translateZ(calc(var(--e)*var(--z)*1px + var(--lift,0px)));transition:transform .35s cubic-bezier(.3,1.4,.5,1),opacity .35s}
+.pt,.pt::after{border:2.5px solid var(--ink)}
+.pt::after{content:'';position:absolute;inset:-2.5px;border-radius:inherit;background:var(--ink);transform:translateZ(-9px);opacity:calc(var(--e)*1)}
+.pt.on{--lift:46px;outline:5px solid var(--yellow);outline-offset:4px}
+.pt-conn.on{outline:0}
+.ph3.focus .pt-screen:not(.on){opacity:.16}
+.ph3.focus .pt-screen:not(.on)::after{display:none}
+.pt-conn.on u,.pt-conn.on s,.pt-conn.on em{outline:4px solid var(--yellow);outline-offset:3px}
+.pt.on .pt-n{background:var(--ink);color:var(--yellow);transform:translateZ(1px) scale(1.35)}
+.pt-n{position:absolute;right:-12px;top:-12px;width:28px;height:28px;background:var(--yellow);border:2px solid var(--ink);font:500 12px/24px var(--mono);text-align:center;color:var(--ink);opacity:var(--e);transform:translateZ(1px)}
+.pt-back{inset:0;border-radius:44px;background:var(--violet);--z:0}
+.pt-back i{position:absolute;inset:14px;border:2px dashed rgba(255,255,255,.35);border-radius:32px}
+.pt-conn{left:22px;right:22px;bottom:22px;height:70px;--z:80;border:0!important}
+.pt-conn::after{display:none}
+.pt-conn u,.pt-conn s,.pt-conn em{position:absolute;border:2.5px solid var(--ink);background:var(--yellow)}
+.pt-conn u{left:0;top:0;width:78px;height:34px;border-radius:5px;background:repeating-linear-gradient(90deg,var(--yellow) 0 5px,#E9BE2C 5px 8px)}
+.pt-conn s{right:0;top:0;width:86px;height:30px;border-radius:5px}
+.pt-conn em{left:50%;bottom:0;width:74px;height:22px;margin-left:-37px;border-radius:11px;background:var(--sheet)}
+.pt-bat{left:22px;top:178px;width:122px;height:236px;border-radius:9px;background:var(--sheet);--z:150;display:flex;align-items:center;justify-content:center}
+.pt-bat svg{width:44px;height:44px;color:var(--violet)}
+.pt-bat::before{content:'';position:absolute;left:14px;right:14px;top:14px;height:9px;background:repeating-linear-gradient(90deg,var(--ink) 0 9px,transparent 9px 14px);opacity:.75}
+.pt-board{right:22px;top:58px;width:76px;height:384px;border-radius:7px;background:var(--green);--z:225;background-image:linear-gradient(90deg,transparent 18px,rgba(255,255,255,.35) 18px 20px,transparent 20px 44px,rgba(255,255,255,.35) 44px 46px,transparent 46px),linear-gradient(rgba(22,15,46,.25) 2px,transparent 2px);background-size:auto,100% 46px}
+.pt-board u{position:absolute;left:12px;width:22px;height:22px;background:var(--ink);border-radius:2px}
+.pt-mem{right:30px;top:232px;width:60px;height:74px;border-radius:5px;background:var(--lilac);--z:300}
+.pt-mem::before{content:'';position:absolute;inset:9px;border:2px solid var(--ink);background:repeating-linear-gradient(0deg,transparent 0 6px,rgba(22,15,46,.2) 6px 8px)}
+.pt-cam{left:22px;top:58px;width:106px;height:106px;border-radius:26px;background:#2B2152;--z:265}
+.pt-cam u{position:absolute;width:42px;height:42px;border-radius:50%;background:var(--ink);border:4px solid var(--lilac);box-shadow:inset 0 0 0 7px #3A2E78}
+.pt-cam u:nth-child(1){left:9px;top:9px}.pt-cam u:nth-child(2){right:9px;bottom:9px}
+.pt-cam s{position:absolute;right:16px;top:16px;width:14px;height:14px;border-radius:50%;background:var(--yellow);border:2px solid var(--ink)}
+.pt-screen{inset:0;border-radius:44px;background:var(--ink);--z:410;overflow:visible;border-width:5px}
+.pt-screen::after{inset:-5px}
+.scr{position:absolute;inset:7px;border-radius:33px;background:#ECE5DD;overflow:hidden;display:flex;flex-direction:column}
+.scr-bar{background:#0B5D52;color:#fff;padding:36px 13px 9px;display:flex;align-items:center;gap:8px;font:700 13px/1.1 var(--body)}
+.scr-bar i{width:26px;height:26px;border-radius:50%;background:var(--violet) url("img/icone-destaque-se.png") 54% 50%/64% no-repeat;border:1.5px solid #fff}
+.scr-bar small{display:block;font-weight:400;font-size:10px;opacity:.85}
+.scr-isl{position:absolute;top:12px;left:50%;width:78px;height:22px;margin-left:-39px;border-radius:12px;background:var(--ink);z-index:2}
+.scr-msgs{padding:11px 10px;display:flex;flex-direction:column;gap:7px;font-size:11px;line-height:1.35;color:#111}
+.scr-msgs p{max-width:84%;padding:6px 9px;border-radius:8px;background:#fff;align-self:flex-start;box-shadow:0 1px 0 rgba(0,0,0,.12)}
+.scr-msgs p.me{background:#D9FDD3;align-self:flex-end}
+.xr-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-family:var(--hand);font-size:25px;color:var(--violet-d);white-space:nowrap;transition:opacity .3s}
+.xr:not(.idle) .xr-cue{opacity:0}
+.xr-dots{display:none}
+
+/* DUA + chat */
+.dua{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:70px;align-items:center;margin-top:90px}
+.chat{background:#ECE5DD;border:2.5px solid var(--ink);box-shadow:10px 10px 0 var(--ink);transform:rotate(-1.2deg)}
+.chat-bar{background:#0B5D52;color:#fff;display:flex;align-items:center;gap:11px;padding:12px 15px;font-weight:700;font-size:15.5px;line-height:1.15}
+.chat-bar i{width:38px;height:38px;border-radius:50%;background:var(--violet) url("img/icone-destaque-se.png") 54% 50%/64% no-repeat;border:2px solid #fff;flex-shrink:0}
+.chat-bar small{display:block;font-weight:400;font-size:12px;opacity:.9}
+.chat-body{height:372px;overflow:hidden;padding:15px 13px;display:flex;flex-direction:column;gap:9px;justify-content:flex-end}
+.bub{max-width:84%;padding:8px 11px 9px;font-size:14.5px;line-height:1.4;color:#111;background:#fff;border-radius:9px;border-top-left-radius:0;align-self:flex-start;box-shadow:0 1px 0 rgba(0,0,0,.14);animation:bub .32s cubic-bezier(.3,1.5,.5,1) both;transform-origin:0 100%;flex-shrink:0}
+.bub.me{background:#D9FDD3;align-self:flex-end;border-radius:9px;border-top-right-radius:0;transform-origin:100% 100%}
+.bub b{display:block;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--violet-d);margin-bottom:3px}
+@keyframes bub{from{opacity:0;transform:scale(.6)}}
+.typing{display:flex;gap:4px;padding:13px 13px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#8a8a8a;animation:ty 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes ty{0%,60%,100%{transform:none;opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+.chat-in{display:flex;gap:9px;padding:10px 12px;background:#F0F0F0;border-top:1px solid rgba(0,0,0,.08)}
+.chat-in span{flex:1;background:#fff;border-radius:20px;padding:8px 15px;font-size:13.5px;color:#9a9a9a}
+.chat-in i{width:37px;height:37px;border-radius:50%;background:#0B5D52}
+.demo-note{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:22px}
+.dua-letters{display:flex;gap:16px;margin-bottom:30px}
+.dua-letters span{width:92px;height:104px;border:2.5px solid var(--ink);background:var(--sheet);box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--disp);font-weight:900;font-size:50px;line-height:1;transition:background .3s,color .3s,transform .3s cubic-bezier(.3,1.6,.5,1),box-shadow .3s}
+.dua-letters small{font:500 9.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-top:7px}
+.dua-letters span.on{background:var(--violet);color:#fff;transform:translate(-3px,-5px) rotate(-3deg);box-shadow:9px 11px 0 var(--yellow)}
+.dua-title{font-family:var(--disp);font-weight:900;font-size:clamp(26px,3vw,38px);line-height:1.1;margin-bottom:14px}
+.dua-desc{font-size:18px;color:var(--mute);max-width:48ch}
+
+/* ═══ DIFERENÇA ═══ */
+.vs{position:relative;display:grid;margin-top:64px;max-width:980px}
+.vs::before{content:'';position:absolute;top:-16px;bottom:-16px;left:50%;right:0;background:var(--violet);border:2.5px solid #fff;box-shadow:10px 10px 0 var(--yellow)}
+.vs-row{position:relative;display:grid;grid-template-columns:1fr 1fr}
+.vs-row>div{padding:21px 28px;font-size:17.5px;display:flex;align-items:center;gap:13px;line-height:1.35}
+.vs-row+.vs-row>div:first-child{border-top:1.5px solid rgba(255,255,255,.14)}
+.vs-row+.vs-row>div:last-child{border-top:1.5px solid rgba(255,255,255,.3)}
+.vs-head>div{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding-top:18px;padding-bottom:18px}
+.vs-head>div:first-child{color:#9F95C4}
+.no{color:#B0A7CF}
+.no span{background:linear-gradient(var(--red),var(--red)) no-repeat 0 56%/0% 2.5px;transition:background-size .5s ease}
+.vs.in .no span{background-size:100% 2.5px}
+.yes{font-weight:700;color:#fff}
+.yes svg,.chk svg{width:24px;height:24px;flex-shrink:0;fill:none;stroke:var(--yellow);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;transition:stroke-dashoffset .4s ease}
+.vs.in .yes svg,.in .chk svg,.chk.in svg{stroke-dashoffset:0}
+.vs-row:nth-child(2) .no span,.vs-row:nth-child(2) svg{transition-delay:.3s}
+.vs-row:nth-child(3) .no span,.vs-row:nth-child(3) svg{transition-delay:.5s}
+.vs-row:nth-child(4) .no span,.vs-row:nth-child(4) svg{transition-delay:.7s}
+.vs-row:nth-child(5) .no span,.vs-row:nth-child(5) svg{transition-delay:.9s}
+.vs-row:nth-child(6) .no span,.vs-row:nth-child(6) svg{transition-delay:1.1s}
+
+/* ═══ COMO FUNCIONA ═══ */
+.steps{--p:0;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:70px;padding-top:46px}
+.steps::before,.steps::after{content:'';position:absolute;left:0;right:0;top:0;height:6px;background:var(--line)}
+.steps::after{background:var(--violet);transform:scaleX(var(--p));transform-origin:0 50%}
+.step{position:relative}
+.step::before{content:'';position:absolute;top:-57px;left:0;width:28px;height:28px;background:var(--sheet);border:2.5px solid var(--ink);transition:background .3s,transform .3s cubic-bezier(.3,1.7,.5,1)}
+.step.on::before{background:var(--yellow);transform:rotate(45deg) scale(1.1)}
+.step-big{font-family:var(--disp);font-weight:900;font-size:104px;line-height:.85;color:#D3C9B3;transition:color .4s}
+.step.on .step-big{color:var(--violet)}
+.step-num{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;color:var(--mute);margin:16px 0 6px}
+.step h3{font-size:25px;margin-bottom:8px}
+.step p{font-size:16px;color:var(--mute)}
+
+/* ═══ BENEFÍCIOS ═══ */
+.board{position:relative;background:var(--sheet);border:2.5px solid var(--ink);box-shadow:10px 10px 0 var(--ink);margin-top:56px;padding:26px 44px 30px;display:grid;grid-template-columns:1fr 1fr;column-gap:60px}
+.board::before{content:'';position:absolute;top:-22px;left:50%;width:150px;height:40px;margin-left:-75px;background:var(--violet);border:2.5px solid var(--ink);box-shadow:inset 0 -10px 0 var(--violet-d)}
+.chk{display:flex;align-items:center;gap:16px;padding:19px 0;border-bottom:1.5px dashed var(--line);font-size:18.5px;font-weight:600}
+.chk:nth-last-child(-n+2){border-bottom:0}
+.chk u{width:30px;height:30px;border:2.5px solid var(--ink);background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none}
+.chk svg{stroke:var(--green);width:22px;height:22px}
+.chk:nth-child(2) svg{transition-delay:.12s}.chk:nth-child(3) svg{transition-delay:.24s}.chk:nth-child(4) svg{transition-delay:.36s}
+.chk:nth-child(5) svg{transition-delay:.48s}.chk:nth-child(6) svg{transition-delay:.6s}.chk:nth-child(7) svg{transition-delay:.72s}.chk:nth-child(8) svg{transition-delay:.84s}
+
+/* ═══ SOBRE ═══ */
+.about{display:grid;grid-template-columns:.86fr 1.14fr;gap:84px;align-items:center}
+.about-pics{position:relative;padding:0 40px 40px 0}
+.about-main{position:relative;border:2.5px solid var(--ink);box-shadow:14px 14px 0 var(--violet);transform:rotate(-1.6deg);background:#fff}
+.about-main img{width:100%;aspect-ratio:1/1.08;object-fit:cover;object-position:50% 20%}
+.about-mini{position:absolute;right:0;bottom:0;width:38%;background:#fff;border:2.5px solid var(--ink);padding:8px 8px 0;transform:rotate(4deg);box-shadow:6px 6px 0 var(--ink);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.about-mini:hover{transform:rotate(0) scale(1.06)}
+.about-mini img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.about-mini span{display:block;font-family:var(--hand);font-size:19px;line-height:1;padding:7px 2px 9px;text-align:center}
+.about-role{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--violet-d);margin-bottom:24px}
+.about p{margin-bottom:15px;color:#3b3452}
+.about p strong{color:var(--ink)}
+.about-fine{font-size:14.5px!important;color:var(--mute)!important}
+.insta{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;border-bottom:2.5px solid var(--violet);padding-bottom:2px;margin:6px 0 30px;transition:color .2s}
+.insta:hover{color:var(--violet-d)}
+.insta svg{width:19px;height:19px}
+.stats{display:flex;gap:44px;margin-bottom:34px;padding:22px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.stat-n{font-family:var(--disp);font-weight:900;font-size:56px;line-height:1;color:var(--violet-d)}
+.stat-l{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+
+/* ═══ FAQ + NICHOS ═══ */
+.faq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
+.niches{background:var(--ink);color:#fff;border:2.5px solid var(--ink);box-shadow:10px 10px 0 var(--violet);padding:30px 30px 14px;margin-top:38px}
+.niches h3{font-size:25px;margin-bottom:6px}
+.niches>p{font-size:15.5px;color:#C9C0E6;margin-bottom:16px}
+.niches ul{list-style:none}
+.niches li{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1.5px solid rgba(255,255,255,.14);font-size:17px;font-weight:600;line-height:1.3}
+.niches li i{width:10px;height:10px;background:var(--lilac);flex-shrink:0;transition:transform .3s}
+.niches li:hover i{transform:rotate(45deg) scale(1.3);background:var(--yellow)}
+.niches li.main{font-size:19px}
+.niches li.main i{background:var(--yellow);box-shadow:10px -10px 0 var(--violet)}
+.niches li b{margin-left:auto;font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--yellow);color:var(--ink);padding:5px 9px;white-space:nowrap}
+.faq-item{border-top:2px solid var(--ink)}
+.faq-item:last-child{border-bottom:2px solid var(--ink)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:none;border:0;text-align:left;cursor:pointer;padding:24px 4px;font-family:var(--disp);font-weight:700;font-size:21.5px;line-height:1.25;color:var(--ink)}
+.faq-q i{position:relative;width:34px;height:34px;border:2.5px solid var(--ink);background:var(--sheet);flex-shrink:0;transition:transform .35s cubic-bezier(.3,1.5,.5,1),background .3s}
+.faq-q i::before,.faq-q i::after{content:'';position:absolute;left:50%;top:50%;width:15px;height:3px;margin:-1.5px 0 0 -7.5px;background:var(--ink)}
+.faq-q i::after{transform:rotate(90deg);transition:transform .3s}
+.faq-item.open .faq-q i{background:var(--yellow);transform:rotate(180deg)}
+.faq-item.open .faq-q i::after{transform:rotate(0)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.7,.2,1)}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a>div{overflow:hidden}
+.faq-a p{padding:0 54px 26px 4px;color:#3b3452}
+.faq-a a{font-weight:700;border-bottom:2.5px solid var(--green)}
+
+/* ═══ FAIXA ═══ */
+.tapeband{background:var(--yellow);color:var(--ink);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);position:relative;padding:26px 24px;text-align:center;font-family:var(--disp);font-size:clamp(18px,2.2vw,24px);font-weight:700;line-height:1.3}
+.tapeband::before,.tapeband::after{content:'';position:absolute;left:0;right:0;height:9px;background:repeating-linear-gradient(-45deg,var(--ink) 0 12px,transparent 12px 24px)}
+.tapeband::before{top:0}.tapeband::after{bottom:0}
+.tapeband strong{font-weight:900}
+
+/* ═══ CTA ═══ */
+.cta{position:relative;background:var(--violet);color:#fff;padding:120px 0 126px;overflow:hidden;text-align:center}
+.cta .wrap{position:relative;z-index:2;max-width:820px}
+.cta .h2{max-width:none;font-size:clamp(34px,5vw,64px)}
+.cta .sub{color:#EDE7FF;margin:0 auto 40px;max-width:60ch}
+.cta-note{margin-top:30px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:#E2D9FF;display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap}
+.cta-note svg{width:15px;height:15px}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--ink);color:#fff;padding:70px 0 34px}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:46px;margin-bottom:28px;border-bottom:1.5px solid rgba(255,255,255,.16)}
+.foot-tag{font-size:15px;color:#B9AEDD;max-width:300px;margin:16px 0 22px}
+.soc{width:42px;height:42px;border:2px solid #fff;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.soc:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.foot-h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:16px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-links a{font-size:15px;color:#B9AEDD;transition:color .2s}
+.foot-links a:hover{color:#fff}
+.foot-bot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px;color:#9F95C4}
+.foot-pw{display:flex;align-items:center;gap:12px}
+.foot-pw img{height:30px;width:auto}
+
+/* float + modal */
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:200;width:60px;height:60px;background:var(--green);border:2.5px solid var(--ink);box-shadow:5px 5px 0 var(--ink);display:flex;align-items:center;justify-content:center;color:#fff;transition:transform .12s,box-shadow .12s}
+.wa-float:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+.wa-float svg{width:30px;height:30px}
+.wa-float::after{content:'';position:absolute;top:-7px;right:-7px;width:16px;height:16px;background:var(--red);border:2.5px solid var(--ink);animation:pxb 1.6s steps(2) infinite;--o:1}
+.modal-ov{position:fixed;inset:0;background:rgba(22,15,46,.93);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.modal-ov.open{opacity:1;visibility:visible}
+.modal-box{position:relative;width:100%;max-width:920px;aspect-ratio:16/9;background:#000;border:3px solid #fff;box-shadow:12px 12px 0 var(--violet);transform:scale(.92) rotate(-1deg);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.modal-ov.open .modal-box{transform:none}
+.modal-box.vert{max-width:min(420px,calc((100vh - 80px) * 9 / 16));aspect-ratio:9/16}
+.modal-box iframe{width:100%;height:100%;border:0}
+.modal-close{position:absolute;top:-22px;right:-22px;width:44px;height:44px;background:var(--yellow);border:2.5px solid var(--ink);color:var(--ink);font-size:18px;font-weight:700;cursor:pointer;z-index:2}
+
+/* ═══ RESPONSIVO ═══ */
+@media(max-width:1000px){
+  .sec{padding:84px 0}
+  .hero-grid{grid-template-columns:1fr;grid-template-areas:"copy" "video" "cta";row-gap:0}
+  .hero-video{margin-top:38px;margin-right:12px}
+  .hero-cta{margin-top:74px}
+  .res-grid{grid-template-columns:1fr;gap:40px}
+  .res-side{position:static}
+  .res-side .btn,.hint{display:none}
+  .res-bottom{display:flex;justify-content:center}
+  .ig-feed{max-width:480px;margin:0 auto;width:100%}
+  .prob-head{grid-template-columns:1fr;gap:8px;margin-bottom:48px}
+  .feat{grid-template-columns:1fr;gap:44px}
+  .xr-pin{grid-template-columns:1fr;grid-template-rows:56% 44%;gap:0;align-items:stretch}
+  .xr-stage{grid-row:1;height:auto}
+  .xr-list{grid-row:2;display:block;position:relative}
+  .xr-item{position:absolute;inset:0 0 auto 0;border:0!important;padding:8px 0 0;opacity:0!important;transform:translateY(14px)!important;pointer-events:none}
+  .xr-item.on{opacity:1!important;transform:none!important}
+  .xr.idle .xr-item:first-child{opacity:1!important;transform:none!important}
+  .xr-item h3{font-size:22px}
+  .xr-n b{opacity:1}
+  .xr-dots{display:flex;gap:7px;position:absolute;left:0;bottom:22px}
+  .xr-dots i{width:22px;height:6px;background:var(--line);transition:background .3s}
+  .xr-dots i.on{background:var(--violet)}
+  .xr-cue{bottom:2px;font-size:22px}
+  .dua{grid-template-columns:1fr;gap:54px;margin-top:64px}
+  .chat{max-width:400px}
+  .steps{grid-template-columns:1fr;gap:38px;padding:0 0 0 44px;margin-top:54px}
+  .steps::before,.steps::after{left:11px;right:auto;top:0;bottom:0;width:6px;height:auto}
+  .steps::after{transform:scaleY(var(--p));transform-origin:50% 0}
+  .step::before{top:6px;left:-44px}
+  .step-big{font-size:76px}
+  .about{grid-template-columns:1fr;gap:48px}
+  .about-pics{max-width:440px}
+  .faq-grid{grid-template-columns:1fr;gap:50px}
+  .foot-top{grid-template-columns:1fr 1fr;gap:34px}
+}
+@media(max-width:640px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .sec{padding:70px 0}
+  .top{margin-bottom:38px}
+  .by span{display:none}
+  .by img{height:24px}
+  .hero{padding-bottom:64px}
+  .hero-btns{flex-direction:column;gap:16px}
+  .btn{width:100%}
+  .btn-lg{font-size:18px;padding:19px 20px}
+  .note{font-size:23px;bottom:-52px}
+  .playbtn{width:72px;height:72px}
+  .ticker span{font-size:17px;padding:12px 0}
+  .tickets{grid-template-columns:1fr;gap:26px}
+  .ticket{padding:36px 24px 28px}
+  .closing{padding-left:18px;border-left-width:7px;margin-top:56px}
+  .dua-letters span{width:78px;height:92px;font-size:42px}
+  .vs::before{top:-10px;bottom:-10px;box-shadow:6px 6px 0 var(--yellow)}
+  .vs-row>div{padding:15px 12px;font-size:14.5px;gap:8px}
+  .vs-head>div{font-size:10.5px;letter-spacing:.08em}
+  .yes svg{width:18px;height:18px}
+  .board{grid-template-columns:1fr;padding:26px 22px 14px}
+  .chk{font-size:16.5px;padding:15px 0}
+  .chk:nth-last-child(2){border-bottom:1.5px dashed var(--line)}
+  .stats{gap:28px}.stat-n{font-size:44px}
+  .faq-q{font-size:18.5px;padding:20px 2px}
+  .faq-a p{padding-right:8px}
+  .niches{padding:24px 20px 10px}
+  .niches li{font-size:15.5px}.niches li.main{font-size:16.5px;flex-wrap:wrap}
+  .foot-top{grid-template-columns:1fr;gap:28px}
+  .cta{padding:84px 0 96px}
+  .modal-close{top:-18px;right:-10px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .rv,.ld{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8GDC9P2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><polygon fill="currentColor" points="5 3 20 12 5 21"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 52 52"><path d="M8 9 C20 20 32 32 44 44"/><path d="M44 8 C32 21 20 33 8 44"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></symbol>
+  <symbol id="i-cmt" viewBox="0 0 24 24"><path d="M20.5 11.8a8.3 8.3 0 0 1-12.3 7.3L3.5 20.5l1.4-4.6A8.3 8.3 0 1 1 20.5 11.8z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8z"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M6 3.5h12v17l-6-5-6 5z"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M12 4v15M5.5 12.5 12 19l6.5-6.5"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></g></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></g></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h7v8l9-12h-7z"/></symbol>
+</svg>
+
+<div class="prog" id="prog"></div>
+
+<!-- ═══ HERO VSL ═══ -->
+<section class="hero" id="inicio">
+  <div class="px" data-at="1,0;0,1" data-pal="#7445F2,#7445F2,#4B26B8,#DCD0FF,#FFD84A"></div>
+  <div class="wrap">
+    <header class="top ld">
+      <div class="brand"><span class="brand-px"></span><span>Fix<b>IA</b></span></div>
+      <div class="by"><span>uma solução</span><img src="img/logo-destaque-se.png" alt="Destaque-se" width="150" height="30"></div>
+    </header>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="lbl ld" style="--d:.1s"><i></i>Estrutura comercial com IA para assistências técnicas</p>
+        <h1 class="ld" style="--d:.2s">Transformamos o WhatsApp da sua assistência em uma <mark>operação comercial</mark> que atende, acompanha e converte.</h1>
+      </div>
+      <div class="hero-video ld" style="--d:.4s">
+        <span class="tape"></span>
+        <div class="frame" id="vslWrap" onclick="loadVSL()">
+          <img id="vslThumb" src="https://img.youtube.com/vi/xb264Lja-sk/maxresdefault.jpg" alt="FixIA — Vídeo de Apresentação" loading="eager">
+          <div class="frame-ov" id="unmuteBtn"><div class="playbtn"><svg><use href="#i-play"/></svg></div></div>
+        </div>
+        <div class="note" id="vslNote">
+          <svg viewBox="0 0 46 40" fill="none"><path d="M40 36 C36 22 26 12 8 8 M8 8 l11 -4 M8 8 l7 10" stroke="#FFD84A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Clique para assistir
+        </div>
+      </div>
+      <div class="hero-cta ld" style="--d:.55s">
+        <p class="hero-sub">A Destaque-se une inteligência artificial, processo comercial, CRM, follow-up e gestão para sua assistência responder mais rápido, recuperar oportunidades e vender com mais previsibilidade.</p>
+        <div class="hero-btns">
+          <a href="https://wa.me/5511953719569?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20FixIA%20agora." target="_blank" class="btn btn-wa btn-lg"><svg><use href="#i-wa"/></svg>Fale com a IA agora</a>
+          <a href="#depoimentos" class="btn btn-ghost">Resultado de clientes com a FixIA<svg><use href="#i-down"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"><span>Atendimento inteligente</span><span>Processo comercial</span><span>Follow-up</span><span>CRM</span><span>Gestão</span></div></div>
+
+<!-- ═══ RESULTADOS ═══ -->
+<section class="sec" id="resultados">
+  <div class="wrap res-grid">
+    <div class="res-side rv">
+      <p class="lbl"><i></i>Resultados Reais</p>
+      <h2 class="h2">Resultados de quem estruturou o comercial com a <em>FixIA</em></h2>
+      <p class="sub">Donos de assistências técnicas de todo o Brasil já organizaram o atendimento e o acompanhamento das oportunidades. Veja o que dizem.</p>
+      <p class="hint">os vídeos tocam sozinhos conforme você rola
+        <svg viewBox="0 0 54 30" fill="none"><path d="M3 20 C16 4 32 4 48 16 M48 16 l-11 -1 M48 16 l-3 -11" stroke="#4B26B8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </p>
+      <a href="https://wa.me/5511953719569?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20FixIA%20agora." target="_blank" class="btn btn-wa btn-lg"><svg><use href="#i-wa"/></svg>Falar com a IA agora</a>
+    </div>
+    <div>
+      <div class="ig-feed" id="depoimentos" style="scroll-margin-top:40px">
+        <!--FEED-->
+      </div>
+      <div class="res-bottom">
+        <a href="https://wa.me/5511953719569?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20FixIA%20agora." target="_blank" class="btn btn-wa btn-lg"><svg><use href="#i-wa"/></svg>Falar com a IA agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROBLEMAS ═══ -->
+<section class="sec sec-p2 rule" id="problemas">
+  <div class="wrap">
+    <div class="prob-head rv">
+      <div>
+        <p class="lbl"><i></i>O Problema</p>
+        <h2 class="h2 wide">Seu problema não é apenas gerar mais leads. <em>É o que acontece depois que eles chegam.</em></h2>
+      </div>
+      <p class="sub">Sua assistência pode até receber dezenas de mensagens todos os dias. Mas, sem uma estrutura comercial, muitos clientes esperam demais, desaparecem depois do orçamento ou acabam fechando com o concorrente.</p>
+    </div>
+    <div class="tickets">
+      <article class="ticket rv"><span class="t-num">Nº 01</span><svg class="t-x"><use href="#i-x"/></svg><h3>Atendimento sem padrão</h3><p>Cada pessoa responde de uma maneira e o cliente não é conduzido até o fechamento.</p></article>
+      <article class="ticket rv d1"><span class="t-num">Nº 02</span><svg class="t-x"><use href="#i-x"/></svg><h3>Orçamentos sem acompanhamento</h3><p>O preço é enviado, o cliente desaparece e ninguém realiza o follow-up.</p></article>
+      <article class="ticket rv"><span class="t-num">Nº 03</span><svg class="t-x"><use href="#i-x"/></svg><h3>Dependência do dono</h3><p>As vendas dependem de você estar disponível, acompanhando o WhatsApp e cobrando a equipe.</p></article>
+      <article class="ticket rv d1"><span class="t-num">Nº 04</span><svg class="t-x"><use href="#i-x"/></svg><h3>Falta de controle comercial</h3><p>Você não sabe quantos clientes chegaram, quantos receberam orçamento e quantos realmente fecharam.</p></article>
+    </div>
+    <p class="closing rv">Não basta responder rápido. É preciso ter um processo que transforme <em>conversas em serviços fechados.</em></p>
+  </div>
+</section>
+
+<!-- ═══ DEPOIMENTO EM DESTAQUE ═══ -->
+<section class="sec rule" id="destaque">
+  <div class="wrap feat">
+    <div class="polaroid rv" onclick="openVideo('ucUqJtF5PoY')">
+      <span class="tape"></span>
+      <div class="pol-img">
+        <img src="https://img.youtube.com/vi/ucUqJtF5PoY/maxresdefault.jpg" alt="Depoimento de Dionisio — DicaCell" loading="lazy">
+        <div class="playbtn"><svg><use href="#i-play"/></svg></div>
+      </div>
+      <div class="pol-cap">Dionisio — DicaCell</div>
+    </div>
+    <div class="rv d2">
+      <p class="lbl"><i></i>Depoimento em destaque</p>
+      <div class="feat-name">Dionisio</div>
+      <div class="feat-role">DicaCell</div>
+      <p class="sub">Veja como foi estruturar o comercial da assistência com a FixIA — atendimento, acompanhamento das oportunidades e um processo que conduz o cliente até o fechamento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOLUÇÃO ═══ -->
+<section class="sec sec-p2 rule" id="solucao" style="padding-bottom:100px">
+  <div class="wrap">
+    <div class="sol-head rv">
+      <p class="lbl"><i></i>A Solução</p>
+      <h2 class="h2 wide">Não entregamos apenas uma IA. <em>Implantamos uma estrutura comercial.</em></h2>
+      <p class="sub">A FixIA organiza toda a jornada do cliente, desde a primeira mensagem até o agendamento, fechamento ou transferência para sua equipe.</p>
+    </div>
+
+    <!-- vista explodida, guiada pela rolagem -->
+    <div class="xr idle" id="xr">
+      <div class="xr-pin">
+        <div class="xr-list">
+          <div class="xr-item"><span class="xr-n">01<b>TELA</b></span><h3>IA comercial especializada</h3><p>Atende imediatamente, entende a necessidade do cliente, coleta informações e conduz a conversa.</p></div>
+          <div class="xr-item"><span class="xr-n">02<b>PLACA</b></span><h3>Processo de atendimento</h3><p>Criamos etapas, perguntas, argumentos e direcionamentos específicos para sua assistência.</p></div>
+          <div class="xr-item"><span class="xr-n">03<b>MEMÓRIA</b></span><h3>CRM e organização dos leads</h3><p>Cada oportunidade é registrada e acompanhada dentro do processo comercial.</p></div>
+          <div class="xr-item"><span class="xr-n">04<b>BATERIA</b></span><h3>Follow-up automatizado</h3><p>Clientes que pediram orçamento e desapareceram voltam a ser acompanhados.</p></div>
+          <div class="xr-item"><span class="xr-n">05<b>CONECTOR</b></span><h3>Transferência para vendedores</h3><p>Quando necessário, a IA transfere a oportunidade com todas as informações coletadas.</p></div>
+          <div class="xr-item"><span class="xr-n">06<b>CÂMERA</b></span><h3>Indicadores e gestão</h3><p>Você acompanha o que está acontecendo e identifica onde sua assistência está perdendo vendas.</p></div>
+          <div class="xr-dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="xr-stage" id="xrStage">
+          <div class="ph3" id="ph3">
+            <div class="pt pt-back"><i></i></div>
+            <div class="pt pt-conn" data-k="4"><u></u><s></s><em></em><span class="pt-n" style="right:auto;left:66px">5</span></div>
+            <div class="pt pt-bat" data-k="3"><svg><use href="#i-bolt"/></svg><span class="pt-n">4</span></div>
+            <div class="pt pt-board" data-k="1"><u style="top:26px"></u><u style="top:118px;left:38px"></u><u style="top:330px"></u><span class="pt-n">2</span></div>
+            <div class="pt pt-cam" data-k="5"><u></u><u></u><s></s><span class="pt-n">6</span></div>
+            <div class="pt pt-mem" data-k="2"><span class="pt-n">3</span></div>
+            <div class="pt pt-screen" data-k="0">
+              <div class="scr">
+                <span class="scr-isl"></span>
+                <div class="scr-bar"><i></i><div>FixIA<small>online</small></div></div>
+                <div class="scr-msgs"><p class="me">Oi, vocês trocam tela de iPhone 11?</p><p>Oi! Trocamos sim. A tela trincou ou parou de responder ao toque?</p><p class="me">Trincou e o toque tá falhando</p><p>Entendi. Você usa o aparelho para trabalhar?</p><p class="me">Uso sim, preciso dele hoje</p><p>Tenho horário às 14h ou às 16h30. Qual fica melhor?</p></div>
+              </div>
+              <span class="pt-n" style="top:60px">1</span>
+            </div>
+          </div>
+          <div class="xr-cue">continue rolando para abrir ↓</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- método D.U.A. -->
+    <div class="dua">
+      <div class="rv">
+        <div class="chat" id="chatBox">
+          <div class="chat-bar"><i></i><div>FixIA<small>online</small></div></div>
+          <div class="chat-body" id="chat"></div>
+          <div class="chat-in"><span>Mensagem</span><i></i></div>
+        </div>
+        <p class="demo-note">Conversa ilustrativa</p>
+      </div>
+      <div class="rv d1">
+        <div class="dua-letters" id="duaL"><span data-k="D">D<small>Diagnóstico</small></span><span data-k="U">U<small>Urgência</small></span><span data-k="A">A<small>Agendamento</small></span></div>
+        <div class="dua-title">Método D.U.A. exclusivo</div>
+        <p class="dua-desc">Nossa IA usa o Método D.U.A. (Diagnóstico + Urgência + Agendamento) — validado em mais de 50 assistências — para conduzir cada conversa ao fechamento com naturalidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIFERENÇA ═══ -->
+<section class="sec sec-ink" id="diferenca">
+  <div class="wrap">
+    <div class="rv">
+      <p class="lbl"><i></i>A Diferença</p>
+      <h2 class="h2 wide">Sua assistência não precisa de mais um chatbot. <em>Precisa de um comercial que funcione.</em></h2>
+      <p class="sub">Um chatbot apenas responde perguntas. A FixIA ajuda a estruturar atendimento, qualificação, acompanhamento, agendamento e gestão comercial.</p>
+    </div>
+    <div class="vs rv">
+      <div class="vs-row vs-head"><div>Chatbot comum</div><div>Estrutura FixIA</div></div>
+      <div class="vs-row"><div class="no"><span>Apenas responde mensagens</span></div><div class="yes"><svg><use href="#i-check"/></svg>Conduz a jornada comercial</div></div>
+      <div class="vs-row"><div class="no"><span>Funciona de maneira isolada</span></div><div class="yes"><svg><use href="#i-check"/></svg>Atua integrada ao processo</div></div>
+      <div class="vs-row"><div class="no"><span>Não acompanha oportunidades</span></div><div class="yes"><svg><use href="#i-check"/></svg>Realiza follow-up</div></div>
+      <div class="vs-row"><div class="no"><span>Não organiza os vendedores</span></div><div class="yes"><svg><use href="#i-check"/></svg>Transfere leads qualificados</div></div>
+      <div class="vs-row"><div class="no"><span>Não gera controle comercial</span></div><div class="yes"><svg><use href="#i-check"/></svg>Registra etapas e indicadores</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMO FUNCIONA ═══ -->
+<section class="sec" id="como-funciona">
+  <div class="wrap">
+    <div class="rv">
+      <p class="lbl"><i></i>Como Funciona</p>
+      <h2 class="h2 wide">Da desorganização comercial a uma <em>operação estruturada</em></h2>
+    </div>
+    <div class="steps" id="steps">
+      <div class="step"><div class="step-big">1</div><div class="step-num">ETAPA 1</div><h3>Diagnóstico</h3><p>Analisamos seu atendimento, seus serviços, sua equipe, seus preços e a maneira como os clientes chegam.</p></div>
+      <div class="step"><div class="step-big">2</div><div class="step-num">ETAPA 2</div><h3>Estruturação</h3><p>Construímos o processo comercial, as etapas do atendimento, os critérios de qualificação e os follow-ups.</p></div>
+      <div class="step"><div class="step-big">3</div><div class="step-num">ETAPA 3</div><h3>Implantação</h3><p>Configuramos a IA, o CRM, as integrações e as transferências para sua equipe.</p></div>
+      <div class="step"><div class="step-big">4</div><div class="step-num">ETAPA 4</div><h3>Otimização</h3><p>Acompanhamos as conversas e melhoramos continuamente o processo para aumentar a eficiência comercial.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BENEFÍCIOS ═══ -->
+<section class="sec sec-p2 rule" id="beneficios">
+  <div class="wrap">
+    <div class="rv">
+      <p class="lbl"><i></i>O que muda na prática</p>
+      <h2 class="h2 wide">Uma operação criada para vender com <em>mais controle</em></h2>
+    </div>
+    <div class="board rv">
+      <div class="chk"><u><svg><use href="#i-check"/></svg></u>Respostas mais rápidas</div>
+      <div class="chk"><u><svg><use href="#i-check"/></svg></u>Menos clientes esquecidos</div>
+      <div class="chk"><u><svg><use href="#i-check"/></svg></u>Mais orçamentos acompanhados</div>
+      <div class="chk"><u><svg><use href="#i-check"/></svg></u>Atendimento padronizado</div>
+      <div class="chk"><u><svg><use href="#i-check"/></svg></u>Leads mais qualificados para a equipe</div>
+      <div class="chk"><u><svg><use href="#i-check"/></svg></u>Menos dependência do proprietário</div>
+      <div class="chk"><u><svg><use href="#i-check"/></svg></u>Mais clareza sobre os resultados comerciais</div>
+      <div class="chk"><u><svg><use href="#i-check"/></svg></u>Cada oportunidade registrada e acompanhada</div>
+    </div>
+    <p class="closing rv">Mais conversas sendo acompanhadas. <em>Mais oportunidades chegando ao fechamento.</em></p>
+  </div>
+</section>
+
+<!-- ═══ SOBRE ═══ -->
+<section class="sec rule" id="sobre">
+  <div class="wrap about">
+    <div class="about-pics rv">
+      <div class="about-main"><span class="tape"></span><img src="img/fabio-porcelli.webp" alt="Fabio Porcelli" loading="lazy"></div>
+      <div class="about-mini"><img src="img/fabio-palestra.webp" alt="Fabio Porcelli na Expo Empreender" loading="lazy"><span>Expo Empreender</span></div>
+    </div>
+    <div class="rv d1">
+      <p class="lbl"><i></i>O Especialista</p>
+      <h2 class="h2">Quem está por trás da <em>FixIA</em></h2>
+      <p class="about-role">Especialista em estruturação comercial para assistências técnicas</p>
+      <p>Fábio Porcelli é especialista em estruturação comercial para assistências técnicas.</p>
+      <p>Depois de acompanhar de perto o atendimento e as vendas de dezenas de empresas do segmento, desenvolveu uma metodologia que conecta marketing, processo comercial, atendimento, CRM, follow-up e inteligência artificial.</p>
+      <p><strong>A FixIA nasceu para resolver um problema que vai além da demora nas respostas: a falta de uma estrutura capaz de acompanhar cada oportunidade até o fechamento.</strong></p>
+      <p class="about-fine">Fundador da Destaque-se e da FixIA • Especialista em vendas para assistências técnicas • Mais de 50 empresas aceleradas</p>
+      <a class="insta" href="https://www.instagram.com/fabioporcelli/" target="_blank" rel="noopener"><svg><use href="#i-insta"/></svg>@fabioporcelli</a>
+      <div class="stats">
+        <div><div class="stat-n"><span data-count="50">50</span>+</div><div class="stat-l">Empresas aceleradas</div></div>
+        <div><div class="stat-n">Expo</div><div class="stat-l">Empreender Palestrante</div></div>
+      </div>
+      <a href="https://wa.me/5511953719569?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20FixIA%20agora." target="_blank" class="btn btn-wa btn-lg"><svg><use href="#i-wa"/></svg>Fale com a IA agora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ + NICHOS ═══ -->
+<section class="sec sec-p2 rule" id="faq">
+  <div class="wrap faq-grid">
+    <div class="rv">
+      <p class="lbl"><i></i>Dúvidas frequentes</p>
+      <h2 class="h2">Perguntas <em>frequentes</em></h2>
+      <div class="niches" id="nichos">
+        <h3>Nichos que atendemos</h3>
+        <p>Nosso foco é assistência técnica. Também atendemos donos de:</p>
+        <ul>
+          <li class="main"><i></i>Assistência técnica<b>Foco principal</b></li>
+          <li><i></i>Loja de iPhone</li>
+          <li><i></i>Assistência técnica de eletrodomésticos e televisores</li>
+          <li><i></i>Venda de celular no boleto</li>
+          <li><i></i>Venda de moto elétrica</li>
+        </ul>
+      </div>
+    </div>
+    <div class="faq rv d1" id="faqList">
+      <div class="faq-item open">
+        <button class="faq-q" aria-expanded="true">Quais nichos vocês atendem?<i></i></button>
+        <div class="faq-a"><div><p>Nosso foco é assistência técnica. Também atendemos donos de loja de iPhone, assistência técnica de eletrodomésticos e televisores, venda de celular no boleto e venda de moto elétrica.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">A FixIA é um chatbot?<i></i></button>
+        <div class="faq-a"><div><p>Não. Um chatbot apenas responde perguntas. A FixIA ajuda a estruturar atendimento, qualificação, acompanhamento, agendamento e gestão comercial.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">A IA substitui a minha equipe?<i></i></button>
+        <div class="faq-a"><div><p>Não. A IA atende imediatamente, entende a necessidade do cliente, coleta informações e conduz a conversa. Quando necessário, transfere a oportunidade para a sua equipe com todas as informações coletadas.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Como funciona a implantação?<i></i></button>
+        <div class="faq-a"><div><p>Em quatro etapas: diagnóstico, estruturação, implantação e otimização. Analisamos seu atendimento, construímos o processo comercial, configuramos a IA, o CRM e as integrações, e seguimos acompanhando as conversas para melhorar o processo.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">O que acontece com o cliente que pede orçamento e some?<i></i></button>
+        <div class="faq-a"><div><p>Ele volta a ser acompanhado. O follow-up automatizado retoma o contato, e cada oportunidade fica registrada e acompanhada dentro do processo comercial.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Como eu vejo a FixIA funcionando antes de decidir?<i></i></button>
+        <div class="faq-a"><div><p>Chame a FixIA no WhatsApp e teste na prática. Em poucos minutos você entende como ela responde, acompanha e conduz uma conversa. <a href="https://wa.me/5511953719569?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20FixIA%20agora." target="_blank">Falar com a IA agora</a></p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGÊNCIA -->
+<div class="tapeband"><p><strong>Sua assistência não precisa apenas de uma IA.</strong> Precisa de uma estrutura comercial que funcione.</p></div>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section class="cta" id="fale-com-a-ia">
+  <div class="px" data-at="0,0;1,1" data-pal="#4B26B8,#4B26B8,#160F2E,#DCD0FF,#FFD84A"></div>
+  <div class="wrap">
+    <p class="lbl rv"><i></i>Fale com a IA agora</p>
+    <h2 class="h2 rv">Quer ver como a FixIA atende <em>na prática?</em></h2>
+    <p class="sub rv d1">Chame a FixIA no WhatsApp e teste na prática como ela funciona. Em poucos minutos você entende como ela responde, acompanha e conduz uma conversa — e já tem uma ideia clara de como seria o plano para a sua assistência.</p>
+    <div class="rv d2"><a href="https://wa.me/5511953719569?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20FixIA%20agora." target="_blank" class="btn btn-wa btn-lg"><svg><use href="#i-wa"/></svg>Fale com a IA agora</a></div>
+    <p class="cta-note rv d3"><svg><use href="#i-lock"/></svg>Conversa segura no WhatsApp · Sem compromisso · Sem enrolação</p>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="brand"><span class="brand-px"></span><span>Fix<b>IA</b></span></div>
+        <p class="foot-tag">FixIA — Estrutura comercial com inteligência artificial para assistências técnicas.</p>
+        <a href="https://www.instagram.com/fabioporcelli/" target="_blank" class="soc" aria-label="Instagram"><svg width="20" height="20"><use href="#i-insta"/></svg></a>
+      </div>
+      <div>
+        <div class="foot-h">Navegação</div>
+        <ul class="foot-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#problemas">O problema</a></li>
+          <li><a href="#solucao">A estrutura</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#sobre">Especialista</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#faq">Dúvidas frequentes</a></li>
+          <li><a href="#fale-com-a-ia">Fale com a IA</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-h">Contato</div>
+        <ul class="foot-links">
+          <li><a href="https://wa.me/5511953719569?text=Ol%C3%A1,%20tenho%20interesse%20e%20gostaria%20de%20agilizar%20meu%20atendimento." target="_blank">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/fabioporcelli/" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-h">Legal</div>
+        <ul class="foot-links">
+          <li><a href="https://destaqueseagora.com.br/politicas-de-privacidade-destaque-se/" target="_blank">Privacidade</a></li>
+          <li><a href="https://destaqueseagora.com.br/politicas-de-privacidade-destaque-se/" target="_blank">Termos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p>© 2025 FixIA. Todos os direitos reservados.</p>
+      <div class="foot-pw">Desenvolvido por <img src="img/logo-destaque-se.png" alt="Destaque-se e Agora" width="150" height="30"></div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511953719569?text=Ol%C3%A1,%20tenho%20interesse%20e%20gostaria%20de%20agilizar%20meu%20atendimento." target="_blank" class="wa-float" aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<div class="modal-ov" id="modal" onclick="closeIfBg(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeVideo()" aria-label="Fechar">✕</button>
+    <iframe id="vid-iframe" src="" allowfullscreen allow="autoplay"></iframe>
+  </div>
+</div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.classList.add('loaded')));
+
+/* ── VSL: carrega o YouTube só no clique ── */
+function loadVSL(){
+  const w=$('#vslWrap');w.onclick=null;w.classList.add('playing');
+  const n=$('#vslNote');if(n)n.style.visibility='hidden';
+  w.innerHTML='<iframe src="https://www.youtube.com/embed/xb264Lja-sk?autoplay=1&rel=0&modestbranding=1&playsinline=1" allow="autoplay; fullscreen" allowfullscreen title="FixIA — Apresentação"></iframe>';
+}
+
+/* ── modal de vídeo ── */
+function openVideo(id,vert){
+  $('.modal-box').classList.toggle('vert',!!vert);
+  $('#vid-iframe').src=`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+  $('#modal').classList.add('open');document.body.style.overflow='hidden';
+}
+function closeVideo(){$('#modal').classList.remove('open');$('#vid-iframe').src='';document.body.style.overflow=''}
+function closeIfBg(e){if(e.target===$('#modal'))closeVideo()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
+
+/* ── feed de depoimentos (montagem) ── */
+(function(){
+  const vids=[['Q769b9Jm-Ps',1],['-rvi_zuDZ-Q',1],['LP1xRcs2s3Q',0],['TAavdNlb5x4',0],['wYihS8gvx9M',1],['01rgeUQbPqc',0],['zhHo-P__hVc',0],['WvQE916Knds',1],['W-DL16HZWdQ',0],['cX_HmZVfaqI',0]];
+  $('#depoimentos').innerHTML=vids.map(([id,v])=>`
+  <div class="ig-post${v?' vert':''}" data-id="${id}">
+    <div class="ig-head"><div class="vid-av"><span></span></div><div>Parceiro FixIA<small>Assistência técnica · Depoimento real</small></div><i class="ig-dots"></i></div>
+    <div class="ig-media"><img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Depoimento de cliente FixIA" loading="lazy"><div class="yt"></div><button class="ig-sound" type="button" aria-label="Ativar o som"><span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L13 5v14l-5.5-4.5H4z" fill="currentColor"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></svg>Toque para ouvir</span></button></div>
+    <div class="ig-act"><svg class="heart"><use href="#i-heart"/></svg><svg><use href="#i-cmt"/></svg><svg><use href="#i-send"/></svg><svg><use href="#i-save"/></svg></div>
+    <div class="ig-cap"><b>Parceiro FixIA</b> conta como ficou o comercial da assistência depois da FixIA.</div>
+  </div>`).join('');
+})();
+
+/* ── feed: toca o vídeo visível, pausa os demais ── */
+(function(){
+  const posts=$$('.ig-post');if(!posts.length)return;
+  const players=new Map();let soundOn=false,current=null,apiReady=false;
+  const tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+  window.onYouTubeIframeAPIReady=function(){apiReady=true;if(current)play(current)};
+  const setMuted=(p,m)=>p.classList.toggle('muted',m);
+  function play(post){
+    if(!apiReady)return;
+    let pl=players.get(post);
+    if(!pl){
+      pl=new YT.Player(post.querySelector('.yt'),{videoId:post.dataset.id,
+        playerVars:{autoplay:0,mute:soundOn?0:1,playsinline:1,rel:0,modestbranding:1,controls:1},
+        events:{onReady:e=>{if(current!==post)return;
+            if(soundOn)e.target.unMute();else e.target.mute();e.target.playVideo();setMuted(post,!soundOn);check(post,e.target)},
+          onStateChange:e=>{if((e.data===1||e.data===3)&&current!==post){e.target.pauseVideo();return}if(e.data===1)post.classList.add('playing')}}});
+      players.set(post,pl);return;
+    }
+    if(!pl.playVideo)return;
+    if(soundOn)pl.unMute();else pl.mute();setMuted(post,!soundOn);pl.playVideo();check(post,pl);
+  }
+  function check(post,pl){setTimeout(()=>{if(current===post&&pl.getPlayerState&&pl.getPlayerState()!==1){pl.mute();setMuted(post,true);pl.playVideo()}},1200)}
+  function pause(post){const pl=players.get(post);if(pl&&pl.pauseVideo)pl.pauseVideo()}
+  const ratios=new Map();
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>ratios.set(e.target.closest('.ig-post'),e.intersectionRatio));
+    let best=null,br=0;ratios.forEach((r,p)=>{if(r>br){br=r;best=p}});
+    const next=br>=0.6?best:null;
+    if(next===current)return;
+    if(current)pause(current);
+    current=next;if(current)play(current);
+  },{threshold:[0,.25,.5,.6,.75,1]});
+  posts.forEach(p=>io.observe(p.querySelector('.ig-media')));
+  posts.forEach(p=>p.querySelector('.ig-sound').addEventListener('click',ev=>{ev.stopPropagation();soundOn=true;
+    const pl=players.get(p);if(pl&&pl.unMute){pl.unMute();pl.setVolume(100)}setMuted(p,false)}));
+})();
+
+/* ── reveal ── */
+const rvObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rvObs.unobserve(e.target)}}),{threshold:.14,rootMargin:'0px 0px -6% 0px'});
+$$('.rv').forEach(el=>rvObs.observe(el));
+
+/* ── pixels (motivo do logo) ── */
+function pxField(el){
+  const w=el.clientWidth,h=el.clientHeight,c=w<700?20:30,cols=Math.ceil(w/c),rows=Math.ceil(h/c);
+  const pal=el.dataset.pal.split(','),at=el.dataset.at.split(';').map(a=>a.split(',').map(Number));
+  let html='',n=0;
+  for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){
+    const d=Math.min(...at.map(([ax,ay])=>Math.hypot((x/cols-ax)*(w/h),(y/rows-ay))));
+    if(n<120&&Math.random()<Math.max(0,w<700?.5-d*3.2:.6-d*1.9)){n++;
+      html+=`<i style="left:${x*c}px;top:${y*c}px;width:${c}px;height:${c}px;background:${pal[Math.random()*pal.length|0]};--o:${(.2+Math.random()*.8).toFixed(2)};animation-duration:${(3+Math.random()*6).toFixed(1)}s;animation-delay:-${(Math.random()*9).toFixed(1)}s"></i>`}
+  }
+  el.innerHTML=html;
+}
+$$('.px').forEach(pxField);
+let rzT;addEventListener('resize',()=>{clearTimeout(rzT);rzT=setTimeout(()=>{$$('.px').forEach(pxField);fitPhone()},250)});
+
+/* ── ticker ── */
+(function(){const t=$('#ticker');t.innerHTML=t.innerHTML.repeat(8)})();
+
+/* ── FAQ ── */
+$$('.faq-q').forEach(b=>b.addEventListener('click',()=>{
+  const it=b.parentElement,open=it.classList.toggle('open');b.setAttribute('aria-expanded',open);
+}));
+
+/* ── contador ── */
+const cObs=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cObs.unobserve(e.target);
+  const el=e.target,end=+el.dataset.count,t0=performance.now();
+  if(reduce){el.textContent=end;return}
+  (function f(t){const k=clamp((t-t0)/1400);el.textContent=Math.round(end*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0);
+}),{threshold:.6});
+$$('[data-count]').forEach(el=>cObs.observe(el));
+
+/* ── vista explodida + etapas + barra de progresso (rolagem) ── */
+const xr=$('#xr'),ph=$('#ph3'),stage=$('#xrStage'),parts=$$('.pt[data-k]'),items=$$('.xr-item'),dots=$$('.xr-dots i'),steps=$('#steps'),stepEls=$$('.step'),prog=$('#prog');
+function fitPhone(){ph.style.setProperty('--s',Math.min(1,stage.clientHeight/780,stage.clientWidth/540).toFixed(3))}
+fitPhone();
+let lastK=-2;
+function onScroll(){
+  const vh=innerHeight;
+  prog.style.transform=`scaleX(${clamp(scrollY/(document.documentElement.scrollHeight-vh))})`;
+  // celular
+  const r=xr.getBoundingClientRect();
+  if(r.bottom>-vh&&r.top<vh*2){
+    const p=clamp(-r.top/(r.height-vh));
+    ph.style.setProperty('--t',ease(clamp(p/.17)).toFixed(4));
+    ph.style.setProperty('--e',ease(clamp((p-.04)/.2)).toFixed(4));
+    const k=p<.15?-1:Math.min(5,Math.floor((p-.15)/.85*6));
+    if(k!==lastK){lastK=k;
+      xr.classList.toggle('idle',k<0);ph.classList.toggle('focus',k>=0);
+      parts.forEach(el=>el.classList.toggle('on',+el.dataset.k===k));
+      items.forEach((el,i)=>el.classList.toggle('on',i===k));
+      dots.forEach((el,i)=>el.classList.toggle('on',i<=k));
+    }
+  }
+  // etapas
+  const s=steps.getBoundingClientRect(),sp=clamp((vh*.72-s.top)/(innerWidth>1000?vh*.5:s.height));
+  steps.style.setProperty('--p',sp.toFixed(3));
+  stepEls.forEach((el,i)=>el.classList.toggle('on',sp>=i/4+.03));
+}
+let tick=false;
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(()=>{onScroll();tick=false})}},{passive:true});
+onScroll();
+
+/* ── conversa demonstrativa (Método D.U.A.) ── */
+(function(){
+  const box=$('#chat'),letters=$$('#duaL span');
+  const script=[
+    ['u','Oi, vocês trocam tela de iPhone 11? Quanto fica?'],
+    ['b','Oi! Trocamos sim. Me conta: a tela trincou ou parou de responder ao toque?','D','Diagnóstico'],
+    ['u','Trincou e o toque tá falhando'],
+    ['b','Entendi. Quando o toque começa a falhar, costuma piorar rápido. Você usa o aparelho para trabalhar?','U','Urgência'],
+    ['u','Uso sim, preciso dele hoje'],
+    ['b','Então vamos resolver hoje. Tenho horário às 14h ou às 16h30. Qual fica melhor?','A','Agendamento'],
+    ['u','14h'],
+    ['b','Agendado ✅ Te espero às 14h.']
+  ];
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  const add=h=>{const d=document.createElement('div');d.innerHTML=h;const el=d.firstChild;box.appendChild(el);while(box.children.length>7)box.firstChild.remove();return el};
+  const mark=k=>letters.forEach(l=>l.classList.toggle('on',l.dataset.k===k));
+  async function run(){
+    for(;;){
+      box.innerHTML='';mark('');
+      for(const [who,txt,k,name] of script){
+        if(who==='u'){await wait(1000);add(`<div class="bub me">${txt}</div>`)}
+        else{await wait(650);const t=add('<div class="bub typing"><i></i><i></i><i></i></div>');await wait(1350);t.remove();
+          if(k)mark(k);add(`<div class="bub">${k?`<b>${k} · ${name}</b>`:''}${txt}</div>`)}
+      }
+      await wait(5200);
+    }
+  }
+  if(reduce){box.innerHTML=script.slice(-6).map(([w,t])=>`<div class="bub${w==='u'?' me':''}" style="animation:none">${t}</div>`).join('');return}
+  const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){o.disconnect();run()}},{threshold:.35});
+  o.observe($('#chatBox'));
+})();
+</script>
+</body>
+</html>
